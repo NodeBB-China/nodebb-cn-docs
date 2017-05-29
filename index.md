@@ -51,7 +51,7 @@ NodeBB 的插件结构十分自由，也十分的开放。 与此同时 NodeBB �
 * [官方论坛](https://community.nodebb.org/)
 * [官方英文版文档](https://docs.nodebb.org/en/latest/)
 
->[info] 编写: a632079
+>[info] 编写: a632079 & NodeBB China
 润色: -
 维护: a632079
 审核: PA Team & NodeBB China
