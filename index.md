@@ -15,7 +15,7 @@ NodeBB 的插件结构十分自由，也十分的开放。 与此同时 NodeBB �
 很多人一开始会拿 Discuz!/PHPWind 来和 NodeBB进行比较，在这里呢，笔者可以很负责的告诉你:想要熟练操控NodeBB的难度是这类PHP论坛的2-3倍。奉劝那些只是看着NodeBB的现代化(Modern)而入坑的童鞋量力而为。
 
 由于老的社区团队已经不再维护中文社区了，所以我们创建了新的社区/团队:
-* NodeBB中文社区 : [nodebb.cn)](http://nodebb.cn.org) **目前是Closed的状态，预计在6.23恢复**
+* NodeBB中文社区 : [nodebb.cn](http://nodebb-cn.org) **目前是Closed的状态，预计在6.23恢复**
 * NodeBB China(QQ交流群) : 392448497
 
 ## 正在使用NodeBB的论坛
