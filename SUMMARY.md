@@ -3,5 +3,5 @@
 * [安装教程](安装教程.md)
     * [Ubuntu + Redis/Mongodb](Ubuntu + Redis-Mongodb.md)
     * [CentOS + Redis/Mongodb](CentOS + Redis-Mongodb.md)
-* [插件制作](插件制作.md)
 * [基础函数 &  变量](基础函数 &  变量.md)
+* [插件制作](插件制作.md)
