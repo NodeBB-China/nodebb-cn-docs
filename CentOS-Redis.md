@@ -112,7 +112,8 @@ systemctl enable redis
 * 加入密码，仅限本地登入，删除 FLUSHALL
 
 ```
-$ vim /etc/redis.conf
+$ vim /etc/redis/redis.conf
+#如果上面没有，配置文件可能会在 /etc/redis.conf
 ```
 编辑 Redis 的配置文件，然后把下面的内容粘贴进去（建议放置到最后）
 ```
