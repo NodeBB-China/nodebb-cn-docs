@@ -2,7 +2,7 @@
 * [导言](index.md)
 * [安装教程](安装教程.md)
     * [通过操作系统](通过操作系统.md)
-        * [Windows + Mongodb/Redis](Windows+Mongodb-Redis.md)
+        * [Windows + Mongodb/Redis](Windows-Mongodb-Redis.md)
         * [Ubuntu/Debian + Redis/Mongodb](Ubuntu.md)
         * [CentOS + Redis](CentOS-Redis.md)
         * [CentOS + Mongodb](CentOS-Mongodb.md)
