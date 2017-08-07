@@ -1,7 +1,7 @@
 >[info] **该文章是 PA Team 安装NodeBB中文社区时使用的方法**
 
-### 1.配置环境
-#### 1.1Node.js
+## 一、 配置环境
+### 1.1 Node.js
 Node.js 是由 Chrome JavaScript V8 引擎衍生出的一种高性能，高并发，易扩展的框架。
 NodeBB也正是因为它，才具有了快捷，高效的特性。
 
@@ -9,7 +9,7 @@ NodeBB也正是因为它，才具有了快捷，高效的特性。
 
 >[success] 目前，推荐使用 `nvm` 来快速安装nodejs。
 
-##### 1.1.1 使用 NVM 来安装 Node.js LTS (推荐)
+#### 1.1.1 使用 NVM 来安装 Node.js LTS (推荐)
 >[warning] 我们建议您使用 **`Root`** 用户来进行下面的安装操作。 这样会减少很多不必要的麻烦!
 >在腾讯云亲测:**使用默认的ubuntu用户来安装比使用Root麻烦十倍 <- 主要是`sudo`并不能载入你的环境配置,so...**)
 * 首先，我们现在服务器上安装 `NVM` 
@@ -51,7 +51,7 @@ $ sudo nvm install --lts
 >[info] 在国内，NPM源的速度比较慢，可以使用`sudo npm config set registry http://registry.npm.taobao.org/`来将npm更换到国内的淘宝源
 
 ----
-##### 1.1.2使用源码编译安装Node.js
+#### 1.1.2使用源码编译安装Node.js
 首先，我们要去Node.js官网获得源代码文件`https://nodejs.org`。
 我们推荐使用LTS作为NodeBB的驱动环境。截止`2017.08.07`，目前Node.js的LTS最新版本为6.11.2。  
 你可以通过下面的Linux指令将Node.js下载到你想要的目录中。
@@ -73,7 +73,7 @@ $ npm -v #同上
 ```
 >[info] 在国内，NPM源的速度比较慢，可以使用`sudo npm config set registry http://registry.npm.taobao.org/`来将npm更换到国内的淘宝源.
 
-#### 1.2 数据库
+### 1.2 数据库
 
 * Mongodb （推荐）
 Mongodb是目前流行的NoSQL数据库。它具有高性能，高可用，易扩展，富查询的特性。相比Redis ，它更能节省内存开支。  
@@ -147,8 +147,8 @@ $ sudo apt-get install -y mongodb-org
 ```
 $ sudo apt-get install redis-server #安装redis
 ```
-### 2.安装
-#### 2.1 获取 NodeBB 程序
+## 二、安装
+### 2.1 获取 NodeBB 程序
 截止 2017.08.07，NodeBB 目前最新稳定版本为1.5.3。
 首先，我们先得安装好Git（如果有，可跳过）
 ```
@@ -215,7 +215,7 @@ $ sudo service nodebb start
 $ sudo service nodebb status
 ```
 
-### 3.使用Web服务器反代NodeBB
+## 三、使用Web服务器反代NodeBB
 * Nginx 
 
 >[info] 在这里推荐你使用 `Oneinstack` 安装 `Nginx`。下面的内容是基于你使用这个安装包安装了 `Nginx` 后的。
