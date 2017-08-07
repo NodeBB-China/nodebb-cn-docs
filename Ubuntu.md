@@ -156,9 +156,9 @@ $ sudo apt-get install -y redis-server #安装redis
 
 >[success]**密码支持，仅限本地使用，删除FLUSHALL**
 
-编辑 `/etc/redis.conf`:
+编辑 `/etc/redis/redis.conf`:
 ```
-$ vim /etc/redis.conf
+$ vim /etc/redis/redis.conf
 ```
 在里面加入下面的内容:
 ```
