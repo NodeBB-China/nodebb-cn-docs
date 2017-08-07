@@ -143,10 +143,34 @@ $ sudo apt-get install -y mongodb-org
   
 
 * redis （不推荐大型社区使用）
-可以参考 在CentOS中安装 的数据库配置部分
+
+>[danger] Q: (NodeBB Development)为什么我们不建议使用 Redis ? 
+>A: https://docs.nodebb.org/configuring/databases/redis/
+1. 安装 Redis
+```shell
+$ sudo add-apt-repository ppa:chris-lea/redis-server
+$ sudo apt-get update
+$ sudo apt-get install -y redis-server #安装redis
 ```
-$ sudo apt-get install redis-server #安装redis
+2. 为 Redis 加入安全性保障:
+
+>[success]**密码支持，仅限本地使用，删除FLUSHALL**
+
+编辑 `/etc/redis.conf`:
 ```
+$ vim /etc/redis.conf
+```
+在里面加入下面的内容:
+```
+requirepass yourpassword
+bind 127.0.0.1
+rename-command FLUSHALL ""
+```
+3. 重启服务
+```
+service redis-server restart
+```
+
 ## 二、安装
 ### 2.1 获取 NodeBB 程序
 截止 2017.08.07，NodeBB 目前最新稳定版本为1.5.3。

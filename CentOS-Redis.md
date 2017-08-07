@@ -108,6 +108,22 @@ yum --enablerepo=remi install redis
 systemctl start redis
 systemctl enable redis
 ```
+6. 我们来给 Redis 加一些安全设置:
+* 加入密码，仅限本地登入，删除 FLUSHALL
+
+```
+$ vim /etc/redis.conf
+```
+编辑 Redis 的配置文件，然后把下面的内容粘贴进去（建议放置到最后）
+```
+requirepass yourpassword
+bind 127.0.0.1
+rename-command FLUSHALL ""
+```
+7. 重启 Redis 服务
+```
+$ service redis-server restart
+```
 ### §3. NodeBB
 
 1. 从 Github 上克隆 NodeBB 的发布版本分支
