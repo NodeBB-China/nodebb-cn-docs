@@ -2,7 +2,7 @@
 >[info] 为了您的服务器安全，仅建议 windows 7/10 以及 Windows Server 2012/2016 使用本教程！
 ## 一、准备 & 安装
 
->[danger] 根据群友的报告，NodeBB 或者 NodeBB 的 依赖 在 Windows 8 环境下在运行时可能会出现错误。所以，我们不推荐在 Windows 8 中继续下面的操作。当然，您也可以选择继续安装。
+>[danger] 根据群友的报告，NodeBB 或者 NodeBB 的 依赖 在 Windows 8 环境下运行时可能会出现错误。所以，我们不推荐在 Windows 8 中继续下面的操作。当然，您也可以选择继续安装。
 ### §1. Chocolatey ( windows包管理器 )
 1. 安装前请检查环境是否到位:
 * 系统: Windows 7+ / Windows Server 2003+
