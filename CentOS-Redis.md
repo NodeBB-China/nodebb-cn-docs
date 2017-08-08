@@ -2,6 +2,8 @@
 
 >[warning] 本教程测试环境为 `CentOS 7`
 
+[TOC]
+
 1. 首先更新 `centos`
 ```
 yum -y update

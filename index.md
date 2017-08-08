@@ -5,18 +5,18 @@
 
 ## 序言
 NodeBB 是 一种基于 Node.js 构建的电子公告牌系统(Bulletin Board System)。事实上，NodeBB已经不能说是一种单纯的 BBS 系统了。相对于传统的BBS,它的风格其实更偏向于 WeCenter 这种话题类的平台(Platform),也就是说它可能并不是十分适合有 **传统BBS** 需求的站长。
-NodeBB的优势在于 即时通讯技术 和 瀑布流消息的呈现模式，这主要得益于 Socket.io 提供的 ajax 解决方案(WebSocket > Long polling)。所以说，NodeBB能够吸引人的其实就是它这种十分友好，流畅的用户之间的交互。
-NodeBB 的插件结构十分自由，也十分的开放。 与此同时 NodeBB 的原生系统其实十分的简陋 ，例如:缺少完善的权限系统，缺少完善的积分系统，未自带完善的社会化登录(SSO)等。
+NodeBB的优势在于 即时通讯技术 和 瀑布流消息的呈现模式，这主要得益于 Socket.io 提供的 ajax 解决方案(WebSocket > Long polling)。可以说，NodeBB能够吸引人的其实就是它这种十分友好，流畅的用户之间的交互。
+NodeBB 的插件结构十分自由，也十分的开放。 与此同时 NodeBB 的原生系统其实十分的简陋 ，例如：缺少完善的权限系统，缺少完善的积分系统，未自带完善的社会化登录(SSO)等。
 所以，我们欢迎任何热爱它的人来加入我们。但是，我们也不会解答一些作为 Node.js 开发者应该明白的常识性问题。
 
 >[warning] 以下是熟练使用 NodeBB 必须掌握的程序:
 > **Node.js** --- NodeBB 是基于 ES5 标准开发的程序。但是鉴于 Node.js 强大的模块系统，所以你完全可以使用 ES6 或者 ES2016 来开发任何新的插件。
 > **MongoDB/Redis** 掌握数据库的基本操作，能够让你在初期避免发生一些奇葩的问题。
 
-很多人一开始会拿 Discuz!/PHPWind 来和 NodeBB进行比较，在这里呢，笔者可以很负责的告诉你:想要熟练操控NodeBB的难度是这类PHP论坛的2-3倍。奉劝那些只是看着NodeBB的现代化(Modern)而入坑的童鞋量力而为。
+很多人一开始会拿 Discuz!/PHPWind 来和 NodeBB进行比较，在这里呢，笔者可以很负责的告诉你：想要熟练操控NodeBB的难度是这类PHP论坛的2-3倍。奉劝那些只是看着NodeBB的现代化(Modern)而入坑的童鞋量力而为。
 
 由于老的社区团队已经不再维护中文社区了，所以我们创建了新的社区/团队:
-* NodeBB中文社区 : [nodebb-cn.org](http://nodebb-cn.org) **由于主机商的原因，数据丢失了:( 又是一次从零开始**
+* NodeBB中文社区 : [nodebb-cn.org](http://community.nodebb-cn.org) **由于主机商的原因，数据丢失了:( 又是一次从零开始**
 * NodeBB China(QQ交流群) : 392448497
 
 ## 正在使用NodeBB的论坛

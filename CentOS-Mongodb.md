@@ -1,4 +1,7 @@
 > 服务器选用 64 位 CentOS，MongoDB 现在只有64位版本
+# CentOS & MongoDB
+[TOC]
+
 ## 一、准备
 1. 关闭 SELinux
 

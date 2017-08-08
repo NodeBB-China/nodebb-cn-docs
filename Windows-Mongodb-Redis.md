@@ -1,5 +1,8 @@
 # Windows 
 >[info] 为了您的服务器安全，仅建议 windows 7/10 以及 Windows Server 2012/2016 使用本教程！
+
+[TOC]
+
 ## 一、准备 & 安装
 
 >[danger] 根据群友的报告，NodeBB 或者 NodeBB 的 依赖 在 Windows 8 环境下运行时可能会出现错误。所以，我们不推荐在 Windows 8 中继续下面的操作。当然，您也可以选择继续安装。
@@ -146,6 +149,7 @@ mongo
 >[warning] 我这里 Redis 配置失败....暂时就不编写了吧:(
 
 ### §3. NodeBB
+
 1. 利用 Powershell 到一个你喜欢的位置，然后克隆nodebb库，如
 ```
 cd D:\
@@ -171,6 +175,7 @@ npm i --producation
 ![](images/18.png)
 Enjoy it!
 #### §4. Nginx (反代)
+
 1. 配置 Nginx
 首先确认你的 Nginx 版本:
 ```
@@ -231,6 +236,7 @@ cmd(具有管理员权限) 转移到 nginx 目录，然后输入 `mynginx.exe in
 3. 启动 Nginx
 ![](images/screenshot_1502178710231.png)
 4. 把域名解析至服务器，然后即可使用URL访问你的 NodeBB 了。
+
 -----------------------
 >[info] 编写: a632079
 维护: a632079

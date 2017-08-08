@@ -1,4 +1,6 @@
 >[info] **该文章是 PA Team 安装NodeBB中文社区时使用的方法**
+# Ubuntu/Debian
+[TOC]
 
 ## 一、 配置环境
 ### 1.1 Node.js
@@ -75,7 +77,7 @@ $ npm -v #同上
 
 ### 1.2 数据库
 
-* Mongodb （推荐）
+#### Mongodb （推荐）
 Mongodb是目前流行的NoSQL数据库。它具有高性能，高可用，易扩展，富查询的特性。相比Redis ，它更能节省内存开支。  
  
    - **Ubuntu**
@@ -142,7 +144,7 @@ $ sudo apt-get install -y mongodb-org
   
   
 
-* redis （不推荐大型社区使用）
+#### redis （不推荐大型社区使用）
 
 >[danger] Q: (NodeBB Development)为什么我们不建议使用 Redis ? 
 >A: https://docs.nodebb.org/configuring/databases/redis/

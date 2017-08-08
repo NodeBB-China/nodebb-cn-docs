@@ -1,4 +1,7 @@
 # 配置 NginX 作为代理
+
+[TOC]
+
 NodeBB默认运行在端口`4567`上,这意味着通常需要 `URL:Port` 才能访问 NodeBB（例如: `http://example.org:4567`）
 为了允许NodeBB在没有端口的情况下可以被访问，可以设置 NginX 来让所有对特定主机名（或子域）的请求代理到在任何端口上运行的 NodeBB 。
 ## 要求
