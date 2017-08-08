@@ -34,7 +34,7 @@
 ```
 
 #### 通过 PowerShell.exe 安装
-~~使用 Powershell 之前，你还需要一个额外的步骤来检测 Powershell 的配置。您必须保证Get-ExecutionPolicy不受限制。我们建议使用`Bypass`绕过该策略来安装或安全性更高一点的`AllSigned`。~~
+~~使用 Powershell 之前，你还需要一个额外的步骤来检测 Powershell 的配置。您必须保证Get-ExecutionPolicy不受限制。我们建议使用`Bypass`或安全性更高一点的`AllSigned`来绕过该策略来安装。~~
 ~~在 Powershell 下执行:~~
 ```
 Get-ExecutionPolicy
@@ -88,7 +88,7 @@ MongoDB 是一个比较优秀的 NoSQL 数据库。相比 Redis ，它更适用�
 
 关闭当前的 Powershell 窗口(CMD窗口)，然后再新建一个，输入下面的指令:
 ```
-mongo -v
+mongo --version
 ```
 不出意外，你得到的结果应该和下图类似:
 ![](images/5.png)
