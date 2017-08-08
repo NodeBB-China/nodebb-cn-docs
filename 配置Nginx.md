@@ -7,6 +7,8 @@ NodeBB默认运行在端口`4567`上,这意味着通常需要 `URL:Port` 才能�
    现在,包管理器安装的 NginX 基本已满足需求。
    - 您可以用 `nginx -V` 查看 NginX 版本
 ## 修改配置
+>[success] `/path/to/nginx` 意味着需要你替换成 Nginx 的安装路径。(如:`/usr/local/nginx`,`C:\ProgramData\Chocolatey\lib\nginx\tools\nginx-1.12.1\`)
+
 编辑文件 `/path/to/nginx/conf/nginx.conf`,在 http 块加入内容。如:
 
 >[info] 如果您查看过 NodeBB 官方文档，你会发现它的 配置文件位置 已经过时。
