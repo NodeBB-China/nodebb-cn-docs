@@ -13,7 +13,7 @@
 * [更新 NodeBB](更新NodeBB.md)
 * [配置 MongoDB](配置MongoDB.md)
 * [配置 Nginx](配置Nginx.md)
-* [NodeBB Q&A](NodeBBQA.md)
+* [FAQ](NodeBBQA.md)
 * [优化](优化.md)
 * [开发](开发.md)
     * [基础函数 & 变量](基础函数 &  变量.md)
