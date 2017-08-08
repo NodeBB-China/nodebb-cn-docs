@@ -42,7 +42,7 @@ $ ./nodebb stop
 
 #### 备份 Redis
 与所有的升级一样，第一步是 **备份你的数据**。没人喜欢数据库损坏/错误。
-NodeBB中，所有的文本数据都在` .rdb `文件中。在通常安装的 Redis 上，主数据库在 `/var/lib/redis/dump.rdb`。
+Redis 中，所有的数据库数据都在` .rdb `文件中。在通常安装的 Redis 上，主数据库在 `/var/lib/redis/dump.rdb`。
 
 把文件保存到安全的地方。
 
