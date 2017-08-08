@@ -1,6 +1,8 @@
 # Windows 
->[info] 为了您的服务器安全，仅建议 windows 7/8/10 以及 Windows Server 2012/2016 使用本教程！
+>[info] 为了您的服务器安全，仅建议 windows 7/10 以及 Windows Server 2012/2016 使用本教程！
 ## 一、准备 & 安装
+
+>[danger] 根据群友的报告，NodeBB 或者 NodeBB 的 依赖 在 Windows 8 环境下在运行时可能会出现错误。所以，我们不推荐在 Windows 8 中继续下面的操作。当然，您也可以选择继续安装。
 ### §1. Chocolatey ( windows包管理器 )
 1. 安装前请检查环境是否到位:
 * 系统: Windows 7+ / Windows Server 2003+
@@ -23,7 +25,7 @@
 >[info]需要通过代理服务器安装？ 请参阅 [通过代理服务器安装](https://chocolatey.org/install#installing-behind-a-proxy)。
 > 需要完全脱机解决方案？ 请参阅 [完全脱机安装](https://chocolatey.org/install#completely-offline-install)。
 > 需要安装许可版？请参阅 [安装许可版本](https://chocolatey.org/docs/installation-licensed)。
-> **点击以上链接，将会使你跳转到 Chocolatey 指定内容 的官方安装教程(English only)**
+> **点击以上链接，将会使你跳转到 Chocolatey 官方安装教程 的 指定内容(English only)**
 
 #### 通过 cmd.exe 安装
 执行下面的指令来安装 Chocolatey:
@@ -169,9 +171,68 @@ npm i --producation
 ![](images/18.png)
 Enjoy it!
 #### §4. Nginx (反代)
-> 太困了，明天写吧
+1. 配置 Nginx
+首先确认你的 Nginx 版本:
+```
+nginx -v
+```
+>[info]截止 2017.08.08 从 Chocolatey 下载的 Nginx 版本为:`1.12.1`
+
+然后我们进入目录，编辑配置，把下面那段配置复制到 http 节下(需要更多配置? 请参考 配置 Nginx 篇):
+```
+server {
+    listen 80;
+
+    server_name 改成你要的域名;
+
+    location / {
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-NginX-Proxy true;
+
+        proxy_pass http://127.0.0.1:4567;
+        proxy_redirect off;
+
+        # Socket.IO Support
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+    }
+}
+```
+![](images/19.png)![](images/20.png)![](images/21.png)
+
+2. 把 Nginx 注册成系统服务
+访问 `https://github.com/kohsuke/winsw/releases` 下载 Windows service wrapper.
+
+>[info] 64位系统下载 `WinSW.NET4.exe` 32位系统下载 `WinSW.NET2.exe`
+
+![](images/22.png)
+然后，把 `WinSW.NET*.exe` 重命名为 `mynginx.exe` 后，移到和 `nginx.exe` 同级的目录
+![](images/23.png)
+新建一个文本文档，改名为 `mynginx.xml`，编辑它，加入下面的内容(记得替换对应的目录):
+```
+<service>
+	<id>nginx</id>
+	<name>nginx</name>
+	<description>nginx</description>
+	<logpath>C:\ProgramData\Chocolatey\lib\nginx\tools\nginx-1.12.1\</logpath>
+	<logmode>roll</logmode>
+	<depend></depend>
+	<executable>C:\ProgramData\Chocolatey\lib\nginx\tools\nginx-1.12.1\nginx.exe</executable>
+	<stopexecutable>C:\ProgramData\Chocolatey\lib\nginx\tools\nginx-1.12.1\nginx.exe -s stop</stopexecutable>
+</service>
+```
+![](images/24.png)
+cmd(具有管理员权限) 转移到 nginx 目录，然后输入 `mynginx.exe install` 安装它。
+![](images/25.png)
+3. 启动 Nginx
+![](images/screenshot_1502178710231.png)
+4. 把域名解析至服务器，然后即可使用URL访问你的 NodeBB 了。
 -----------------------
 >[info] 编写: a632079
 维护: a632079
 审核: PA Team
-最后更新: 2017.08.07
+最后更新: 2017.08.08
