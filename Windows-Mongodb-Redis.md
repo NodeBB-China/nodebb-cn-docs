@@ -16,7 +16,7 @@
 ![](images/1.png)
 
 >[danger] ①  尽管 Chocolatey 也支持 在没有管理员权限的窗口下安装，但为了避免以后可能会出现的麻烦，我们不建议你在 无管理员权限 的情况下进行安装
-> **② Windows 7 的 Powershell 版本为1.0,并不满足Chocolatey的安装条件，所以请打开一个 *具有管理员权限的CMD窗口* 来代替 Powershell**
+> **② Windows 7 的 Powershell 版本为1.0,并不满足Chocolatey的安装条件，所以请打开一个 *具有管理员权限的CMD窗口* 来代替 Powershell**。当然，你也可以选择 [点击这里](https://www.microsoft.com/zh-CN/download/details.aspx?id=40855) 来升级你的 Powershell 到 4.0
 * 复制特定的命令至Shell中( cmd.exe 或 powershell.exe )
 * 粘贴进去之后 按 `Enter `键执行
 * 等待几秒钟完成命令
