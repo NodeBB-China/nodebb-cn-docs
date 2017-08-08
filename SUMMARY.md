@@ -10,6 +10,7 @@
         * [Arch Linux + Redis](ArchLinux-Redis.md)
         * [OSX + Redis](OSX-Redis.md)
     * [通过云服务](通过云服务.md)
+* [更新 NodeBB](更新NodeBB.md)
 * [配置 MongoDB](配置MongoDB.md)
 * [配置 Nginx](配置Nginx.md)
 * [NodeBB Q&A](NodeBBQA.md)

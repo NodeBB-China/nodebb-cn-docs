@@ -59,7 +59,7 @@ Built-In Roles（[内置角色](http://docs.mongodb.org/manual/reference/built-i
 ```
 writeConcern文档（[官方说明](http://docs.mongodb.org/manual/reference/write-concern/)）
 
-* w选项：允许的值分别是 1、0、大于1的值、"majority"、<tag set>；
+* w选项：允许的值分别是 1、0、大于1的值、"majority"、\<tag set>；
 * j选项：确保mongod实例写数据到磁盘上的journal（日志），这可以确保mongd以外关闭不会丢失数据。设置true启用。
 * wtimeout：指定一个时间限制,以毫秒为单位。wtimeout只适用于w值大于1。
 ```
@@ -126,6 +126,8 @@ db.runCommand(
 ```
 ## 权限规则
 参考: http://blog.csdn.net/kk185800961/article/details/45619863
+
+> 以上内容摘自: [【mongoDB运维篇①】用户管理](https://segmentfault.com/a/1190000004263255#articleHeader0)
 # NodeBB 中所需要的 MongoDB 操作
 ## 对于现代版本的MongoDB (3.0之后)
 进入 MongoDB
@@ -185,3 +187,8 @@ security:
 ```
 $ service mongod restart
 ```
+
+>[info] 编写: PA Team & NodeBB Development
+维护: a632079
+审核: PA Team
+最后更新: 2017.08.07
