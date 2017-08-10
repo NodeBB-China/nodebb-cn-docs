@@ -1,7 +1,4 @@
-<center> 
-
-# NodeBB 基础使用 & 开发
-</center>
+## NodeBB 基础使用 & 开发
 <small style="float:right;color:blue;">
 
 **------ 适合有一定 JavaScript 基础的人群阅读** 
