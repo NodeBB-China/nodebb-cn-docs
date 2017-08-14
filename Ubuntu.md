@@ -53,7 +53,7 @@ $ sudo nvm install --lts
 >[info] 在国内，NPM源的速度比较慢，可以使用`sudo npm config set registry http://registry.npm.taobao.org/`来将npm更换到国内的淘宝源
 
 ----
-#### 1.1.2使用源码编译安装Node.js
+#### 1.1.2 使用源码编译安装Node.js (已不再推荐)
 首先，我们要去Node.js官网获得源代码文件`https://nodejs.org`。
 我们推荐使用LTS作为NodeBB的驱动环境。截止`2017.08.07`，目前Node.js的LTS最新版本为6.11.2。  
 你可以通过下面的Linux指令将Node.js下载到你想要的目录中。
@@ -242,17 +242,95 @@ $ sudo service nodebb status
 ```
 
 ## 三、使用Web服务器反代NodeBB
-* Nginx 
+### Nginx 
 
->[info] 在这里推荐你使用 `Oneinstack` 安装 `Nginx`。下面的内容是基于你使用这个安装包安装了 `Nginx` 后的。
+#### 通过 系统源 安装 Nginx
+1. 先去官网下载 apt 源的签名，并添加
+```
+$ wget http://nginx.org/keys/nginx_signing.key
+$ sudo apt-key add nginx_signing.key
+```
+2. 在 /etc/apt/sources.list 添加源 
+```
+$ vim /etc/apt/sources.list
+# Ubuntu 16.04
+$ deb http://nginx.org/packages/ubuntu/ xenial nginx
+$ deb-src http://nginx.org/packages/ubuntu/ xenial nginx
+# Ubuntu 14.04
+$ deb http://nginx.org/packages/ubuntu/ trusty nginx
+$ deb-src http://nginx.org/packages/ubuntu/ trustyl nginx
+
+# Debian 7 Wheezy
+$ deb http://nginx.org/packages/debian/ wheezy nginx
+$ deb-src http://nginx.org/packages/debian/ wheezy nginx
+# Debian 8 Jessie 
+$ deb http://nginx.org/packages/debian/ jessie nginx
+$ deb-src http://nginx.org/packages/debian/ jessie nginx
+```
+3. 安装
+```
+$ sudo apt-get update
+$ sudo apt-get install nginx
+```
+4. 新增配置
+
+>[success] 有关 详细的Nginx 反代配置 您可以参考**高级 - 配置Nginx**篇。
+
+执行 `vim /etc/nginx/nginx.conf`，在 `http` 语句块内追加上：
+
+```nginx
+##########################################
+server {
+    listen 80;
+
+    server_name www.xxx.com; # 你的域名
+
+   location / {
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-NginX-Proxy true;
+
+        proxy_pass http://127.0.0.1:4567;
+        proxy_redirect off;
+
+        # Socket.IO Support
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+    }
+    
+    # 配置 502 页? 参考: 高级 - 配置 Nginx
+}
+##########################################
+```
+5. 启动 Nginx
+```
+$ service nginx start
+```
+####  通过 编译 安装 Nginx 
+>[info] 由于编译安装 比较繁琐，所以我们推荐使用 `Oneinstack` 来进行安装 Nginx.
+```
+$ sudo apt-get -y install wget screen curl python
+$ wget http://mirrors.linuxeye.com/oneinstack-full.tar.gz
+$ tar -xzf oneinstack-full.tar.gz
+$ cd oneinstack
+$ screen -S os
+# 在 Screen 内的操作
+$ ./install.sh
+```
+根据需要选择你需要安装的部分。
+
+>[success] 下面的内容是基于你使用这个安装包安装了 `Nginx` 后的。
 
 ```
 $ cd ~/oneinstack #跳转到你解压oneinstack的目录
 $ sudo ./vhost.sh add #配置你需要使用的域名（可以开启ssl）
 $ sudo vim /usr/local/nginx/conf/vhost/domains.conf 
 ```
--------------------------
->[success] 有关 详细的Nginx 反代配置 您可以参考**Nginx 反代**篇。
+
+>[success] 有关 详细的Nginx 反代配置 您可以参考**高级 - 配置Nginx**篇。
 
 * 编辑你刚才填写的域名的配置文件。
 
@@ -282,6 +360,7 @@ location / {
 $ sudo service nginx reload
 ```
 ---
+### 其他 Web 服务器
 下面是Apache的配置方法，如果您需要，可以点击查看。
 * [Apache v2.4.x+](http://nodebb.readthedocs.io/en/latest/configuring/proxies/apache.html)
 * [Apache v2.x](http://nodebb.readthedocs.io/en/latest/configuring/proxies/apache2.2.html)
