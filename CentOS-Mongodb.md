@@ -70,7 +70,7 @@ $ sudo nvm install --lts
 1. 创建文件并编辑它
 
 ```
-vim /etc/yum.repos.d/mongodb-org-3.4.repo
+$ vim /etc/yum.repos.d/mongodb-org-3.4.repo
 ```
 2. 把下面的内容复制进去
 ```
@@ -195,20 +195,21 @@ $ yum install nginx.x86_64
 
 执行 `vim /etc/nginx/nginx.conf`，在 `http` 语句块内追加上：
 
-```
+```nginx
 ##########################################
 server {
     listen 80;
 
     server_name www.xxx.com; # 你的域名
 
-    location / {
+   location / {
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
         proxy_set_header Host $http_host;
         proxy_set_header X-NginX-Proxy true;
 
-        proxy_pass http://127.0.0.1:4567/;
+        proxy_pass http://127.0.0.1:4567;
         proxy_redirect off;
 
         # Socket.IO Support
@@ -217,14 +218,7 @@ server {
         proxy_set_header Connection "upgrade";
     }
     
-    # Config 502 page.
-
-    error_page 502 /502.html;
-
-    location = /502.html {
-        root /usr/share/nginx/html;
-        internal;
-    }
+    # 配置 502 页? 参考: 高级 - 配置 Nginx
 }
 ##########################################
 ```
@@ -232,7 +226,7 @@ server {
 ```
 $ service nginx start
 ```
->更详细的Nginx配置，可参考 配置Nginx 篇。
+>更详细的Nginx配置，可参考 **高级 - 配置Nginx** 篇。
 
 ## 三、完成
 
@@ -241,7 +235,7 @@ $ service nginx start
 运行以下命令启动 NodeBB：
 
 ```
-./nodebb start
+$ ./nodebb start
 ```
 >[warning] 请检测是否能通过url访问你的社区，若不行，则看看哪一步出错了。
 
@@ -279,9 +273,9 @@ $ forever list
 > 2. https://docs.nodebb.org/en/latest/configuring/databases/mongo.html
 > 3. https://docs.mongodb.org/manual/administration/configuration/#security-considerations
 > 4. https://docs.nodebb.org/en/latest/configuring/proxies/nginx.html
->
+
 -----------------------------
 >[info] 编写: hao-lee
 维护: a632079
 审核: PA Team
-最后更新: 2017.08.07
+最后更新: 2017.08.10
