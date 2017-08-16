@@ -10,6 +10,7 @@
         * [Arch Linux + Redis](ArchLinux-Redis.md)
         * [OSX + Redis](OSX-Redis.md)
     * [通过云服务](通过云服务.md)
+* [使用](使用.md)
 * [常见问题](NodeBBQA.md)
 * [高级](高级.md)
     * [数据库备份与恢复](数据库备份与恢复.md)
