@@ -9,7 +9,8 @@ NodeBB 定期在 [发布版本页面](https://github.com/NodeBB/NodeBB/releases)
 
 **一如既往**， NodeBB 团队不会为，可能由于升级引起的，任何意外、数据丢失、数据损坏、或者任何坏的情况负责。所以在升级之前，请**不要忘记备份**！
 
->[danger] 补充: 使用 zip 包安装的 NodeBB 的更新方法。**虽然 Github 确实链接缓慢，但我们依旧不建议使用 ZIP 包安装NodebB**
+>[warning] 补充: 使用 zip 包安装的 NodeBB 的更新方法（更新路径依旧参考 Git 方法安装的NodeBB）。
+> **虽然 Github 确实链接缓慢，但我们依旧不建议使用 ZIP 包安装NodebB**
 > 1. 备份 数据库 ，config.json 和 public 目录
 > 2. 下载新版本的 zip 包，解压缩
 > 3.  将 Public 目录替换到新的目录中 ， 把第一步备份的文件一次替换进去( 除了 config.json 选择替换，其他都 否)
@@ -116,4 +117,4 @@ node app --upgrade
 >[info] 编写: NodeBB Development Team
 维护: a632079
 审核: PA Team
-最后更新: 2017.08.07
+最后更新: 2017.08.17
