@@ -110,7 +110,7 @@ server {
 >[warning] 此配置仅适用于NodeBB v1.4.3 及 以上版本。
 
 ## 配置 Redis
-当您设置NodeBB使用多个流程时，最好配置Redis。每个NodeBB进程可以通过Redis pub- sub与其他进程通信。在服务器上安装Redis，并在 `config.json`中添加一个Redis块。下面就是一个使用 mongodb 作为数据库储存 和 Redis pubsub 的例子。
+当您设置NodeBB使用集群时，最好配置Redis。这样，每个NodeBB进程都可以通过 Redis pub- sub 与其他进程通信。在服务器上安装Redis，并在 `config.json`中添加一个Redis块，重启后 NodeBB 将自动调用 Redis。下面就是一个使用 mongodb 作为数据库储存 和 Redis pubsub 的配置示例。
 
 >[success] 当这样配置的时候，Redis 也将被用作会话 (sessions) 存储。
 ```
