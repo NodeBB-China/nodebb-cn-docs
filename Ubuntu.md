@@ -140,7 +140,7 @@ $ sudo apt-get install -y mongodb-org
 ---------------
 >[success] 17.07.17 新增: **阿里源** `http://mirrors.aliyun.com/mongodb/apt/{ubuntu或者debian}` 
    
-**有关如何配置Mongodb数据库，[请点击这里](https://www.nodebb-cn.org/topic/14/nodebb安装实战-配置mongodb)**
+**有关如何配置Mongodb数据库，[请点击这里](https://www.kancloud.cn/a632079/nodebb-cn/372104)**
   
   
 
