@@ -21,6 +21,7 @@
     * [设置 Widgets](设置Widgets.md)
     * [数据库备份与恢复](数据库备份与恢复.md)
     * [重置管理员密码](重置管理员密码.md)
+    * [让 NodeBB 支持搜索](让NodeBB支持搜索.md)
 * [优化](优化.md)
     * [优化配置，提升NodeBB处理能力](优化NodeBB.md)
     * [Google字体库 -> 360公共前端库](googleto360.md)
