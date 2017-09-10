@@ -71,7 +71,7 @@ $ sudo service elasticsearch start
 
 >[warning] 使用 公共搜索引擎 的前提是：您的站点已经被它收录 并且 您的站点的收录量/收录速度比较可观，否则就算安装了，也是然并卵系列。
 
-这类插件就比较多啦，你只需要在 寻找插件搜索 对应的搜索引擎名字（如：baidu,google,bing）即可。
+这类插件就比较多啦，你只需要在 寻找插件 中 搜索 对应的搜索引擎名字（如：baidu,google,bing）即可。
 
 >[info] 编写: a632079
 维护: PA Team
