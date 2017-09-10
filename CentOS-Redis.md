@@ -13,7 +13,7 @@ yum update
 2. 安装基础环境
 ```
 yum -y groupinstall "Development Tools"
-yum -y install git imageMagick
+yum -y install git ImageMagick
 ```
 ## 二、安装
 ### §1. Node.js

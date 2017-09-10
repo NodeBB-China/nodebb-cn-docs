@@ -18,7 +18,7 @@ SELINUX = disabled
 ```
 $ yum update
 $ yum -y groupinstall "Development Tools"
-$ yum -y install git imageMagick
+$ yum -y install git ImageMagick
 ```
 ## 二、安装
 ### §1. Node.js
