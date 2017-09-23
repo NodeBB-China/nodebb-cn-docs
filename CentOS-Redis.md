@@ -132,8 +132,11 @@ $ service redis-server restart
 1. 从 Github 上克隆 NodeBB 的发布版本分支
 ```
 cd /home #把目录替换为你想安装到的地方
-git clone -b v1.5.x https://github.com/NodeBB/NodeBB nodebb
+git clone -b v1.6.x https://github.com/NodeBB/NodeBB nodebb
 ```
+
+>[success]  **2017.09.23** 更换 `v1.5.x` 分支 为新稳定分支 `v1.6.x`
+
 2. 安装 NodeBB 依赖环境
 ```
 cd /home/nodebb #替换为上面你修改的目录 + /nodebb
@@ -214,4 +217,4 @@ server_names_hash_bucket_size  64;
 >[info] 编写: gaokaigithub
 维护: a632079
 审核: PA Team
-最后更新: 2017.08.07
+最后更新: 2017.09.23

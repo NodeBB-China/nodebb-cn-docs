@@ -7,8 +7,11 @@ $ sudo pacman -S git nodejs npm redis imagemagick icu
 如果要使用MongoDB，LevelDB或其他数据库而不是Redis，请查看“配置数据库”部分。
 下一步，克隆这个仓库:
 ```shell
-$ git clone -b v1.5.x https://github.com/NodeBB/NodeBB.git nodebb
+$ git clone -b v1.6.x https://github.com/NodeBB/NodeBB.git nodebb
 ```
+
+>[success] **2017.09.23** 更换 `v1.5.x` 分支 为新稳定分支 `v1.6.x`
+
 获取NodeBB所需的依赖包：
 ```
 $ cd nodebb
@@ -28,4 +31,4 @@ NodeBB也可以用辅助程序启动，如`supervisor`和`forever`。 你可以�
 >[info] 编写: NodeBB Development Team
 维护: a632079
 审核: PA Team
-最后更新: 2017.08.07
+最后更新: 2017.09.23

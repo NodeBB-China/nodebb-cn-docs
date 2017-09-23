@@ -15,8 +15,10 @@ $ redis-server
 ```
 克隆 NodeBB 仓库:
 ```
-$ git clone -b v1.5.x https://github.com/NodeBB/NodeBB.git
+$ git clone -b v1.6.x https://github.com/NodeBB/NodeBB.git
 ```
+>[success] **2017.09.23** 更换 `v1.5.x` 分支 为新稳定分支 `v1.6.x`
+
 进入目录
 ```
 $ cd NodeBB
@@ -39,4 +41,4 @@ $ ./nodebb start
 >[info] 编写: NodeBB Development Team
 维护: a632079
 审核: PA Team
-最后更新: 2017.08.07
+最后更新: 2017.09.23

@@ -183,10 +183,11 @@ $ sudo apt-get install -y git build-essential
 找到一个你喜欢的位置，然后使用`git`指令获取程序。
 ```
 $ cd /home #修改为你喜欢的位置
-$ sudo git clone -b v1.5.x https://github.com/NodeBB/NodeBB.git nodebb #这将在 /home 下面 新建一个名叫nodebb的文件夹并且会把程序从Github克隆到里面
+$ sudo git clone -b v1.6.x https://github.com/NodeBB/NodeBB.git nodebb #这将在 /home 下面 新建一个名叫nodebb的文件夹并且会把程序从Github克隆到里面
 ```
 
 >[success] **2017.08.07** 更换 `v1.x.x` 分支 为新稳定分支 `v1.5.x`
+> **2017.09.23** 更换 `v1.5.x` 分支 为新稳定分支 `v1.6.x`
 
 然后，我们先把依赖安装完毕。  
 ```
@@ -373,4 +374,4 @@ $ sudo service nginx reload
 >[info] 编写: a632079
 维护: a632079
 审核: PA Team
-最后更新: 2017.08.07
+最后更新: 2017.09.23

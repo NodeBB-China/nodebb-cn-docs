@@ -153,7 +153,7 @@ mongo
 1. 利用 Powershell 到一个你喜欢的位置，然后克隆nodebb库，如
 ```
 cd D:\
-git clone -b v1.5.x https://github.com/NodeBB/NodeBB.git nodebb
+git clone -b v1.6.x https://github.com/NodeBB/NodeBB.git nodebb
 ```
 ![](images/15.png)
 2. 安装 NodeBB 依赖
@@ -241,4 +241,4 @@ cmd(具有管理员权限) 转移到 nginx 目录，然后输入 `mynginx.exe in
 >[info] 编写: a632079
 维护: a632079
 审核: PA Team
-最后更新: 2017.08.08
+最后更新: 2017.09.23

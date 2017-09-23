@@ -22,8 +22,11 @@ $ pkg install node
 ```
 克隆NodeBB repo（假设你已安装 `git`，否则请使用`pkg install git`来安装它）：
 ```
-$ git clone -b v1.5.x https://github.com/NodeBB/NodeBB.git
+$ git clone -b v1.6.x https://github.com/NodeBB/NodeBB.git
 ```
+
+>[success] **2017.09.23** 更换 `v1.5.x` 分支 为新稳定分支 `v1.6.x`
+
 进入 NodeBB 目录 并安装依赖
 ```
 $ cd nodebb
