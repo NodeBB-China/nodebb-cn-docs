@@ -155,6 +155,7 @@ mongo
 cd D:\
 git clone -b v1.6.x https://github.com/NodeBB/NodeBB.git nodebb
 ```
+>[info] 现在，你可以使用国内的镜像仓库(`https://gitee.com/NodeBB-CN/NodeBB.git`)来提高连接速度。
 ![](images/15.png)
 2. 安装 NodeBB 依赖
 ```
@@ -241,4 +242,4 @@ cmd(具有管理员权限) 转移到 nginx 目录，然后输入 `mynginx.exe in
 >[info] 编写: a632079
 维护: a632079
 审核: PA Team
-最后更新: 2017.09.23
+最后更新: 2017.10.22

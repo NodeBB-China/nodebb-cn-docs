@@ -185,6 +185,9 @@ $ sudo apt-get install -y git build-essential
 $ cd /home #修改为你喜欢的位置
 $ sudo git clone -b v1.6.x https://github.com/NodeBB/NodeBB.git nodebb #这将在 /home 下面 新建一个名叫nodebb的文件夹并且会把程序从Github克隆到里面
 ```
+>[info] 现在，你可以使用国内的镜像仓库(`https://gitee.com/NodeBB-CN/NodeBB.git`)来提高连接速度。
+
+------------
 
 >[success] **2017.08.07** 更换 `v1.x.x` 分支 为新稳定分支 `v1.5.x`
 > **2017.09.23** 更换 `v1.5.x` 分支 为新稳定分支 `v1.6.x`
@@ -374,4 +377,4 @@ $ sudo service nginx reload
 >[info] 编写: a632079
 维护: a632079
 审核: PA Team
-最后更新: 2017.09.23
+最后更新: 2017.10.22

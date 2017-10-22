@@ -134,6 +134,9 @@ $ service redis-server restart
 cd /home #把目录替换为你想安装到的地方
 git clone -b v1.6.x https://github.com/NodeBB/NodeBB nodebb
 ```
+>[info] 现在，你可以使用国内的镜像仓库(`https://gitee.com/NodeBB-CN/NodeBB.git`)来提高连接速度。
+
+--------------
 
 >[success]  **2017.09.23** 更换 `v1.5.x` 分支 为新稳定分支 `v1.6.x`
 
@@ -217,4 +220,4 @@ server_names_hash_bucket_size  64;
 >[info] 编写: gaokaigithub
 维护: a632079
 审核: PA Team
-最后更新: 2017.09.23
+最后更新: 2017.10.22
