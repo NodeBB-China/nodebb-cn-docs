@@ -13,7 +13,7 @@ yum update
 2. 安装基础环境
 ```
 yum -y groupinstall "Development Tools"
-yum -y install git ImageMagick
+yum -y install git ImageMagick ImageMagick-devel
 ```
 ## 二、安装
 ### §1. Node.js
@@ -68,10 +68,10 @@ $ sudo nvm install --lts
 ----
 #### 1.2 使用源码编译安装Node.js (目前已不再推荐)
 首先，我们要去Node.js官网获得源代码文件`https://nodejs.org`。
-我们推荐使用LTS作为NodeBB的驱动环境。截止`2017.08.07`，目前Node.js的LTS最新版本为6.11.2。  
+我们推荐使用LTS作为NodeBB的驱动环境。截止`2017.11.26`，目前Node.js的LTS最新版本为 `8.9.1`。  
 你可以通过下面的Linux指令将Node.js下载到你想要的目录中。
 ```
-$ sudo wget https://nodejs.org/dist/v6.11.2/node-v6.11.2.tar.gz 
+$ sudo wget https://nodejs.org/dist/v8.9.1/node-v8.9.1.tar.gz 
 #国内速度比较慢，可以使用这个链接代替：
 # https://npm.taobao.org/mirrors/node/v{版本号}/node-v{版本号}.tar.gz
 ```
@@ -132,14 +132,14 @@ $ service redis-server restart
 1. 从 Github 上克隆 NodeBB 的发布版本分支
 ```
 cd /home #把目录替换为你想安装到的地方
-git clone -b v1.6.x https://github.com/NodeBB/NodeBB nodebb
+git clone -b v1.7.x https://github.com/NodeBB/NodeBB nodebb
 ```
 >[info] 现在，你可以使用国内的镜像仓库(`https://gitee.com/NodeBB-CN/NodeBB.git`)来提高连接速度。
 
 --------------
 
 >[success]  **2017.09.23** 更换 `v1.5.x` 分支 为新稳定分支 `v1.6.x`
-
+> **2017.11.26** 更换 `v1.6.x` 分支 为 新稳定分支 `v1.7.x`
 2. 安装 NodeBB 依赖环境
 ```
 cd /home/nodebb #替换为上面你修改的目录 + /nodebb

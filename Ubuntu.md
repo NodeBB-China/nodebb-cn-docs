@@ -55,10 +55,10 @@ $ sudo nvm install --lts
 ----
 #### 1.1.2 使用源码编译安装Node.js (已不再推荐)
 首先，我们要去Node.js官网获得源代码文件`https://nodejs.org`。
-我们推荐使用LTS作为NodeBB的驱动环境。截止`2017.08.07`，目前Node.js的LTS最新版本为6.11.2。  
+我们推荐使用LTS作为NodeBB的驱动环境。截止`2017.11..26`，目前Node.js的LTS最新版本为`8.9.1`。  
 你可以通过下面的Linux指令将Node.js下载到你想要的目录中。
 ```
-$ sudo wget https://nodejs.org/dist/v6.11.2/node-v6.11.2.tar.gz 
+$ sudo wget https://nodejs.org/dist/v8.9.1/node-v8.9.1.tar.gz 
 #国内速度比较慢，可以使用这个链接代替：
 # https://npm.taobao.org/mirrors/node/v{版本号}/node-v{版本号}.tar.gz
 ```
@@ -175,7 +175,7 @@ service redis-server restart
 
 ## 二、安装
 ### 2.1 获取 NodeBB 程序
-截止 2017.08.07，NodeBB 目前最新稳定版本为1.5.3。
+截止 2017.11.26，NodeBB 目前最新稳定版本为1.7.0。
 首先，我们先得安装好Git（如果有，可跳过）
 ```
 $ sudo apt-get install -y git build-essential
@@ -183,7 +183,7 @@ $ sudo apt-get install -y git build-essential
 找到一个你喜欢的位置，然后使用`git`指令获取程序。
 ```
 $ cd /home #修改为你喜欢的位置
-$ sudo git clone -b v1.6.x https://github.com/NodeBB/NodeBB.git nodebb #这将在 /home 下面 新建一个名叫nodebb的文件夹并且会把程序从Github克隆到里面
+$ sudo git clone -b v1.7.x https://github.com/NodeBB/NodeBB.git nodebb #这将在 /home 下面 新建一个名叫nodebb的文件夹并且会把程序从Github克隆到里面
 ```
 >[info] 现在，你可以使用国内的镜像仓库(`https://gitee.com/NodeBB-CN/NodeBB.git`)来提高连接速度。
 
@@ -191,6 +191,7 @@ $ sudo git clone -b v1.6.x https://github.com/NodeBB/NodeBB.git nodebb #这将�
 
 >[success] **2017.08.07** 更换 `v1.x.x` 分支 为新稳定分支 `v1.5.x`
 > **2017.09.23** 更换 `v1.5.x` 分支 为新稳定分支 `v1.6.x`
+> **2017.11.26** 更换 `v1.6.x`分支 为新稳定分支 `v1.7.x`
 
 然后，我们先把依赖安装完毕。  
 ```
@@ -377,4 +378,4 @@ $ sudo service nginx reload
 >[info] 编写: a632079
 维护: a632079
 审核: PA Team
-最后更新: 2017.10.22
+最后更新: 2017.11.26

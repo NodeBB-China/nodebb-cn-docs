@@ -17,8 +17,9 @@ SELINUX = disabled
 2. 更新系统并安装基础工具
 ```
 $ yum update
+$ yum -y install epel-release
 $ yum -y groupinstall "Development Tools"
-$ yum -y install git ImageMagick
+$ yum -y install git ImageMagick ImageMagick-devel
 ```
 ## 二、安装
 ### §1. Node.js
@@ -111,13 +112,13 @@ $ service mongod start
 切换到	`/home`目录(可替换为你想要的位置)，克隆源代码：
 ```
 $ cd /home #切换到你想要的位置
-$ git clone -b v1.6.x https://github.com/NodeBB/NodeBB.git nodebb
+$ git clone -b v1.7.x https://github.com/NodeBB/NodeBB.git nodebb
 ```
 
 >[info] 现在，你可以使用国内的镜像仓库(`https://gitee.com/NodeBB-CN/NodeBB.git`)来提高连接速度。
 ---------------------------------
 
->[warning] 注意： `v1.6.x` 是最新的稳定版分支的名字，**不建议** 使用其他分支作为 **生产环境**！
+>[warning] 注意： `v1.7.x` 是最新的稳定版分支的名字，**不建议** 使用其他分支作为 **生产环境**！
 2. 安装 NodeBB 的运行依赖
 ```
 $ cd /home/nodebb # /home替换成你上面选取的位置
@@ -281,4 +282,4 @@ $ forever list
 >[info] 编写: hao-lee
 维护: a632079
 审核: PA Team
-最后更新: 2017.10.22
+最后更新: 2017.11.26

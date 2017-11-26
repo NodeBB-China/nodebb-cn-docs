@@ -22,13 +22,13 @@ $ pkg install node
 ```
 克隆NodeBB repo（假设你已安装 `git`，否则请使用`pkg install git`来安装它）：
 ```
-$ git clone -b v1.6.x https://github.com/NodeBB/NodeBB.git
+$ git clone -b v1.7.x https://github.com/NodeBB/NodeBB.git
 ```
 >[info] 现在，你可以使用国内的镜像仓库(`https://gitee.com/NodeBB-CN/NodeBB.git`)来提高连接速度。
 
 ----------------------------
 
->[success] **2017.09.23** 更换 `v1.5.x` 分支 为新稳定分支 `v1.6.x`
+>[success] **2017.11.26** 更换 `v1.6.x` 分支 为新稳定分支 `v1.7.x`
 
 进入 NodeBB 目录 并安装依赖
 ```
@@ -53,4 +53,4 @@ $ ./nodebb start
 >[info] 编写: NodeBB Development Team
 维护: a632079
 审核: PA Team
-最后更新: 2017.08.07
+最后更新: 2017.11.26
