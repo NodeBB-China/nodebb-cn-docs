@@ -88,7 +88,14 @@ $ yum update
 $ yum -y install mongodb-org
 ```
 >[success] 如果您是国内服务器，那么这样安装 `MongoDB` 会很慢，可以将 repo 里面的链接换成阿里云源，
-> `baseurl=http://mirrors.aliyun.com/mongodb/yum/redhat/6/mongodb-org/stable/x86_64/`
+> `baseurl=http://mirrors.aliyun.com/mongodb/yum/redhat/6/mongodb-org/stable/x86_64/`   
+```
+$ mongod --version #查看 Mongodb 版本
+```
+
+>[danger] 请检查：**您的 MongoDB 版本是否大于或等于3.4.10**，如果不是请立即升级（以前的版本存在严重的安全风险）！ 
+
+
 
 4. 关闭巨型页 
 
@@ -122,7 +129,6 @@ $ git clone -b v1.7.x https://github.com/NodeBB/NodeBB.git nodebb
 2. 安装 NodeBB 的运行依赖
 ```
 $ cd /home/nodebb # /home替换成你上面选取的位置
-$ npm i --producation
 ```
 
 3. 新建数据库(详细可查看 配置MongoDB 篇)

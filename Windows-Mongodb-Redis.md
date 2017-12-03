@@ -156,11 +156,6 @@ cd D:\
 git clone -b v1.7.x https://github.com/NodeBB/NodeBB.git nodebb
 ```
 >[info] 现在，你可以使用国内的镜像仓库(`https://gitee.com/NodeBB-CN/NodeBB.git`)来提高连接速度。
-![](images/15.png)
-2. 安装 NodeBB 依赖
-```
-npm i --producation
-```
 ![](images/16.png)
 3. 配置 NodeBB
 ```

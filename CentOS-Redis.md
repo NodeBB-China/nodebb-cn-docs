@@ -143,7 +143,6 @@ git clone -b v1.7.x https://github.com/NodeBB/NodeBB nodebb
 2. 安装 NodeBB 依赖环境
 ```
 cd /home/nodebb #替换为上面你修改的目录 + /nodebb
-npm install --producation
 ```
 >[info] 由于机器性能和网络情况的差异，该操作可能需要您花费 数分钟 甚至 数十分钟 的时间！
 3. 进行初始化设置

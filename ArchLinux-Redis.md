@@ -14,10 +14,9 @@ $ git clone -b v1.7.x https://github.com/NodeBB/NodeBB.git nodebb
 
 >[success] **2017.11.26** 更换 `v1.6.x` 分支 为新稳定分支 `v1.7.x`
 
-获取NodeBB所需的依赖包：
+进入 NodeBB 目录：
 ```
 $ cd nodebb
-$ npm install --producation
 ```
 通过运行带有`setup`标志的脚本来启动安装程序：
 ```

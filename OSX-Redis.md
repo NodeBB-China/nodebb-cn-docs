@@ -27,11 +27,8 @@ $ git clone -b v1.7.x https://github.com/NodeBB/NodeBB.git
 ```
 $ cd NodeBB
 ```
-安装依赖
-```
-$ npm install --producation
-```
-运行交互式安装脚本
+
+运行交互式安装脚本 并 安装依赖
 ```
 $ ./nodebb setup
 ```
