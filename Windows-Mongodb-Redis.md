@@ -131,6 +131,10 @@ mongo
 > use nodebb
 > db.createUser( { user: "nodebb", pwd: "替换成你的NodeBB账户的密码", roles: [ { role: "readWrite", db: "nodebb" }, { role: "clusterMonitor", db: "admin" } ] } )
 ```
+如果要在NodeBB的管理控制面板（高级→数据库）中查看数据库统计信息，请键入以下命令：
+```
+> db.grantRolesToUser("nodebb",[{ role: "clusterMonitor", db: "admin" }]);
+```
 * 退出数据库
 ```
 > exit
@@ -237,4 +241,4 @@ cmd(具有管理员权限) 转移到 nginx 目录，然后输入 `mynginx.exe in
 >[info] 编写: a632079
 维护: a632079
 审核: PA Team
-最后更新: 2017.11.26
+最后更新: 2017.12.3

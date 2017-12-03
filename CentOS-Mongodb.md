@@ -148,8 +148,12 @@ $ mongo
 ```
 > db.createUser( { user: "nodebb", pwd: "替换成你的密码", roles: [ "readWrite" ] } )
 ```
->[danger] NodeBB 需要 MongoDB 版本至少为 2.6
+>[danger] NodeBB 需要 MongoDB 版本至少为 2.6 
 
+如果要在NodeBB的管理控制面板（高级→数据库）中查看数据库统计信息，请键入以下命令：
+```
+> db.grantRolesToUser("nodebb",[{ role: "clusterMonitor", db: "admin" }]);
+```
 * 打开 MongoDB 权限认证
  执行 `vim /etc/mongod.conf`，找到 `security:` 这一行，取消注释并改为：
 ```
@@ -288,4 +292,4 @@ $ forever list
 >[info] 编写: hao-lee
 维护: a632079
 审核: PA Team
-最后更新: 2017.11.26
+最后更新: 2017.12.3

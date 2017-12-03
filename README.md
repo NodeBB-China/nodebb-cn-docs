@@ -15,7 +15,7 @@
 * 文档版本： 第一版
 * NodeBB版本 : 1.7.x
 * 编写 & 校对: PA Team
-* 最后修改 : 2017.11.26
+* 最后修改 : 2017.12.3
 * 欢迎访问 [NodeBB Hot](https://nodebb-cn.org ) & [Github](https://github.com/NodeBB-China/)
 
 ### 帮助我们
