@@ -33,13 +33,18 @@ Ubuntu 的新版本 使用 systemd 来管理服务。下面是一个NodeBB 的 s
 [Unit]
 Description=NodeBB
 Documentation=https://docs.nodebb.org
-After=system.slice multi-user.target
+After=system.slice multi-user.target mongod.service
 
 [Service]
 Type=simple
-User=myuser
+User=nodebb
+
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=nodebb
+
 WorkingDirectory=/path/to/nodebb
-ExecStart=/path/to/nodebb/nodebb --no-silent --no-daemon
+ExecStart=/usr/bin/env node loader.js --no-silent --no-daemon
 Restart=always
 
 [Install]

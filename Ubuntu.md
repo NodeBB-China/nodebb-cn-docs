@@ -79,8 +79,6 @@ $ npm -v #同上
 
 #### Mongodb （推荐）
 Mongodb是目前流行的NoSQL数据库。它具有高性能，高可用，易扩展，富查询的特性。相比Redis ，它更能节省内存开支。  
-
->[danger] 请检查：**您的 MongoDB 版本是否大于或等于3.4.10**，如果不是请立即升级（以前的版本存在严重的安全风险）！ 
   
    - **Ubuntu**
 Mongodb 目前只给LTS版本提供安装包。例如，12.04 LTS (precise), 14.04 LTS (trusty), 16.04 LTS (xenial)。
@@ -89,6 +87,10 @@ Mongodb 目前只给LTS版本提供安装包。例如，12.04 LTS (precise), 14.
 $ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
 ```
 为Mongodb建立一个.list文件
+
+>[info] 由于国内可能源不稳定，我们可以使用`http://mirrors.tuna.tsinghua.edu.cn/apt/{ubuntu或者debian}` 来代替下面的官方源
+---------------
+>[success] 17.07.17 新增: **阿里源** `http://mirrors.aliyun.com/mongodb/apt/{ubuntu或者debian}` 
 ```
 #（目前最新版本是3.4，安装其他版本可以将3.4替换为其他版本。这个方法可能向上兼容到3.2。）
 
@@ -110,7 +112,11 @@ $ sudo apt-get update
 ```
 $ sudo apt-get install -y mongodb-org #安装Mongodb社区版
 ```
-  
+```
+$ mongod --version # 检测版本
+```
+>[danger] 请检查：**您的 MongoDB 版本是否大于或等于3.4.10**，如果不是请立即升级（以前的版本存在严重的安全风险）！ 
+
 -----
   
    - Debian
@@ -119,6 +125,11 @@ $ sudo apt-get install -y mongodb-org #安装Mongodb社区版
 $ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
 ```
  新建一个.list文件
+
+>[info] 由于国内可能源不稳定，我们可以使用`http://mirrors.tuna.tsinghua.edu.cn/apt/{ubuntu或者debian}` 来代替下面的官方源
+---------------
+>[success] 17.07.17 新增: **阿里源** `http://mirrors.aliyun.com/mongodb/apt/{ubuntu或者debian}` 
+
 ```
 #（目前最新版本是3.4，安装其他版本可以将下面的3.4替换为其他版本。这个方法可能向上兼容到3.2。）
 
@@ -136,11 +147,13 @@ $ sudo apt-get update
 ```
 $ sudo apt-get install -y mongodb-org
 ```
-  
->[info] 由于国内可能源不稳定，我们可以使用`http://mirrors.tuna.tsinghua.edu.cn/apt/{ubuntu或者debian}` 来代替上面的官方源
 
----------------
->[success] 17.07.17 新增: **阿里源** `http://mirrors.aliyun.com/mongodb/apt/{ubuntu或者debian}` 
+```
+$ mongod --version # 检测版本
+```
+>[danger] 请检查：**您的 MongoDB 版本是否大于或等于3.4.10**，如果不是请立即升级（以前的版本存在严重的安全风险）！ 
+
+
    
 **有关如何配置Mongodb数据库，[请点击这里](https://www.kancloud.cn/a632079/nodebb-cn/372104)**
   
