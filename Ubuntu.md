@@ -79,7 +79,9 @@ $ npm -v #同上
 
 #### Mongodb （推荐）
 Mongodb是目前流行的NoSQL数据库。它具有高性能，高可用，易扩展，富查询的特性。相比Redis ，它更能节省内存开支。  
- 
+
+>[danger] 请检查：**您的 MongoDB 版本是否大于或等于3.4.10**，如果不是请立即升级（以前的版本存在严重的安全风险）！ 
+  
    - **Ubuntu**
 Mongodb 目前只给LTS版本提供安装包。例如，12.04 LTS (precise), 14.04 LTS (trusty), 16.04 LTS (xenial)。
 导入公钥
@@ -196,13 +198,15 @@ $ sudo git clone -b v1.7.x https://github.com/NodeBB/NodeBB.git nodebb #这将�
 然后，我们先把依赖安装完毕。  
 ```
 $ cd nodebb
-$ sudo npm update
-$ sudo npm install --production
 ```
+> `1.7.x` 起，无需执行`npm i --production` 或 `yarn install --production` 
+
 现在，我们就可以对开始程序的配置了。
 ```
 $ sudo ./nodebb setup
 ```
+>[info] NodeBB v1.7.1 支持使用 `./nodebb install` 来使用 可视化的 Web 界面进行安装（配置）
+
 *可以根据括号中的提示完成信息的填写，nodebb监听的默认端口是`4567`，Mongodb 监听的端口是 `27017`*  
 使用`sudo ./nodebb start` 启动，享受NodeBB给你带来的快乐吧！
 ### 让NodeBB开机自启
