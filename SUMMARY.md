@@ -19,6 +19,8 @@
     * [配置 MongoDB](配置MongoDB.md)
     * [更新 NodeBB](更新NodeBB.md)
     * [设置 Widgets](设置Widgets.md)
+    * [安装 Yarn](install_yarn.md)
+    * [更新 MongoDB](更新MongoDB.md)
     * [数据库备份与恢复](数据库备份与恢复.md)
     * [重置管理员密码](重置管理员密码.md)
     * [让 NodeBB 支持搜索](让NodeBB支持搜索.md)

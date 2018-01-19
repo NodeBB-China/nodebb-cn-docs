@@ -26,8 +26,8 @@ yum -y install git ImageMagick ImageMagick-devel
 
 1. 首先，我们现在服务器上安装 `NVM` 
 ```
-#截止2017.08.07,NVM最新版本为 v0.33.2
-$ sudo curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash 
+#截止2017.08.07,NVM最新版本为 v0.33.8
+$ sudo curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash 
 ```
 ***可以在 [Github](https://github.com/creationix/nvm/) 中获取 NVM 最新的安装指令*** 
 
@@ -68,10 +68,10 @@ $ sudo nvm install --lts
 ----
 #### 1.2 使用源码编译安装Node.js (目前已不再推荐)
 首先，我们要去Node.js官网获得源代码文件`https://nodejs.org`。
-我们推荐使用LTS作为NodeBB的驱动环境。截止`2017.11.26`，目前Node.js的LTS最新版本为 `8.9.1`。  
+我们推荐使用LTS作为NodeBB的驱动环境。截止`2018.01.20`，目前Node.js的LTS最新版本为 `8.9.4`。  
 你可以通过下面的Linux指令将Node.js下载到你想要的目录中。
 ```
-$ sudo wget https://nodejs.org/dist/v8.9.1/node-v8.9.1.tar.gz 
+$ sudo wget https://nodejs.org/dist/v8.9.4/node-v8.9.4.tar.gz 
 #国内速度比较慢，可以使用这个链接代替：
 # https://npm.taobao.org/mirrors/node/v{版本号}/node-v{版本号}.tar.gz
 ```
@@ -219,4 +219,4 @@ server_names_hash_bucket_size  64;
 >[info] 编写: gaokaigithub
 维护: a632079
 审核: PA Team
-最后更新: 2017.10.22
+最后更新: 2017.01.20

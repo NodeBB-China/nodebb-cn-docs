@@ -9,15 +9,70 @@ NodeBB也正是因为它，才具有了快捷，高效的特性。
 
 * 截止目前，NodeBB 要求 Node.js 的最低版本为 v4.x 
 
->[success] 目前，推荐使用 `nvm` 来快速安装nodejs。
+>[success] 目前，推荐使用 Ubuntu/Debian 包管理器 来快速安装nodejs。
+#### 1.1.1 使用 Ubuntu/Debian 包管理器来安装 （推荐）
+>[info] 不同于 nvm ，我们推荐您在非 **`ROOT`** 用户下进行下列操作（直到教程结束）。
 
-#### 1.1.1 使用 NVM 来安装 Node.js LTS (推荐)
+###### **使用 Nodejs 的快速配置脚本**
+```
+$ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+```
+
+---------
+如果是位于大陆的服务器，我们强烈推荐您执行下面的操作 :
+* 编辑 Node.js 源
+```
+$ sudo vim /etc/apt/sources.list.d/nodesource.list  
+```
+使用下方的源来代替源内的 URL
+
+>  `https://mirrors.ustc.edu.cn/nodesource/deb/node_{版本号，例如: 8}.x`
+* 更新 APT 源
+```
+$ sudo apt-get update
+```
+
+---------
+
+通过 APT 安装
+```
+$ sudo apt-get install -y nodejs
+```
+检查 Node.js 版本
+```
+$ node -v
+```
+###### **补充: 安装 `yarn`**
+>[info] 本步骤仅为有需要的童鞋使用，不是必要步骤。
+
+若你不是通过 包管理器 安装 nodejs 的话，建议您使用下面的指令来安装 `yarn`
+```
+$ curl -o- -L https://yarnpkg.com/install.sh | sudo bash
+```
+* 通过包管理器 安装 `yarn`
+
+配置 Yarn 源
+```
+$ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+$ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+```
+更新 APT 源 并 安装 Yarn
+```
+$ sudo apt-get update
+$ sudo apt-get install yarn
+```
+检查 Yarn 版本
+```
+$ yarn -v
+```
+>[info] 有关 Yarn 安装的更多玩法，可以通过 **高级 - 安装 Yarn** 了解。
+#### 1.1.2 使用 NVM 来安装 Node.js LTS  （适用于多版本 Node.js 切换，共存）
 >[warning] 我们建议您使用 **`Root`** 用户来进行下面的安装操作。 这样会减少很多不必要的麻烦!
 >在腾讯云亲测:**使用默认的ubuntu用户来安装比使用Root麻烦十倍 <- 主要是`sudo`并不能载入你的环境配置,so...**)
 * 首先，我们现在服务器上安装 `NVM` 
 ```
-#截止2017.08.07,NVM最新版本为 v0.33.2
-$ sudo curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash 
+#截止2018.01.20,NVM最新版本为 v0.33.8
+$ sudo curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash 
 ```
 ***可以在 [Github](https://github.com/creationix/nvm/) 中获取 NVM 最新的安装指令*** 
 * 添加 NVM 到环境变量
@@ -38,9 +93,17 @@ $ command -v nvm
 
 ***如果你使用的机器是国内的话，建议使用以下代码让NVM使用淘宝镜像来下载源码(腾讯云的下载速度只有可怜的1x.kb/s...)***
 ```
+$ sudo vim ~/.bashrc
+```
+将下方的代码放置到最下方
+```
 #让NVM使用淘宝源
-$ sudo export NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node
-$ sudo export NVM_IOJS_ORG_MIRROR=http://npm.taobao.org/mirrors/iojs
+export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node
+export NVM_IOJS_ORG_MIRROR=https://npm.taobao.org/mirrors/iojs
+```
+使其生效
+```
+$ source ~/.bashrc
 ```
 好，我们使用下面的代码来安装LTS版本
 ```
@@ -50,15 +113,15 @@ $ sudo nvm install --lts
 
 等待执行完成，如果使用`node -v` ，`npm -v`都能正确输出版本号的话，说明nodejs已经成功安装。
 
->[info] 在国内，NPM源的速度比较慢，可以使用`sudo npm config set registry http://registry.npm.taobao.org/`来将npm更换到国内的淘宝源
+>[info] 在国内，NPM源的速度比较慢，可以使用`sudo npm config set registry https://registry.npm.taobao.org/`来将npm更换到国内的淘宝源
 
 ----
-#### 1.1.2 使用源码编译安装Node.js (已不再推荐)
+#### 1.1.3 使用源码编译安装Node.js (已不再推荐)
 首先，我们要去Node.js官网获得源代码文件`https://nodejs.org`。
-我们推荐使用LTS作为NodeBB的驱动环境。截止`2017.11..26`，目前Node.js的LTS最新版本为`8.9.1`。  
+我们推荐使用LTS作为NodeBB的驱动环境。截止`2018.01.20`，目前Node.js的LTS最新版本为`8.9.4`。  
 你可以通过下面的Linux指令将Node.js下载到你想要的目录中。
 ```
-$ sudo wget https://nodejs.org/dist/v8.9.1/node-v8.9.1.tar.gz 
+$ sudo wget https://nodejs.org/dist/v8.9.4/node-v8.9.4.tar.gz 
 #国内速度比较慢，可以使用这个链接代替：
 # https://npm.taobao.org/mirrors/node/v{版本号}/node-v{版本号}.tar.gz
 ```
@@ -81,27 +144,31 @@ $ npm -v #同上
 Mongodb是目前流行的NoSQL数据库。它具有高性能，高可用，易扩展，富查询的特性。相比Redis ，它更能节省内存开支。  
   
    - **Ubuntu**
-Mongodb 目前只给LTS版本提供安装包。例如，12.04 LTS (precise), 14.04 LTS (trusty), 16.04 LTS (xenial)。
+Mongodb 目前只给LTS版本提供安装包。例如，12.04 LTS (precise), 14.04 LTS (trusty), 16.04 LTS (xenial)
+使 APT 支持 https
+```
+$ sudo apt-get install apt-transport-https
+```
 导入公钥
 ```
 $ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
 ```
 为Mongodb建立一个.list文件
 
->[info] 由于国内可能源不稳定，我们可以使用`http://mirrors.tuna.tsinghua.edu.cn/apt/{ubuntu或者debian}` 来代替下面的官方源
+>[info] 由于国内可能源不稳定，我们可以使用`https://mirrors.tuna.tsinghua.edu.cn/mongodb/apt/{ubuntu或者debian}` 来代替下面的官方源
 ---------------
->[success] 17.07.17 新增: **阿里源** `http://mirrors.aliyun.com/mongodb/apt/{ubuntu或者debian}` 
+>[success] 17.07.17 新增: **阿里源** `https://mirrors.aliyun.com/mongodb/apt/{ubuntu或者debian}` 
 ```
-#（目前最新版本是3.4，安装其他版本可以将3.4替换为其他版本。这个方法可能向上兼容到3.2。）
+#（目前最新版本是3.6，安装其他版本可以将 3.6 替换为其他版本。这个方法可能向上兼容到 3.0。）
 
 #如果你是Ubuntu 12.04 LTS 执行下面的代码
-$ sudo echo "deb [ arch=amd64 ] http://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
+$ sudo echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
 
 #如果你是Ubuntu 14.04 LTS ，请执行下面的代码
-$ sudo echo "deb [ arch=amd64 ] http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
+$ sudo echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
 
 #如果你是Ubuntu 16.04 LTS 请执行下面的代码
-$ sudo echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
+$ sudo echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
 
 ```
   更新apt源
@@ -395,4 +462,4 @@ $ sudo service nginx reload
 >[info] 编写: a632079
 维护: a632079
 审核: PA Team
-最后更新: 2017.12.3
+最后更新: 2018.01.20

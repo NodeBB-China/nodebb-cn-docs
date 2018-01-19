@@ -13,9 +13,8 @@
 
 ### 关于版本
 * 文档版本： 第一版
-* NodeBB版本 : 1.7.x
+* NodeBB版本 : 1.7.x / 1.8.x(尚未发布)
 * 编写 & 校对: PA Team
-* 最后修改 : 2017.12.3
 * 欢迎访问 [NodeBB Hot](https://nodebb-cn.org ) & [Github](https://github.com/NodeBB-China/)
 
 ### 帮助我们
@@ -44,5 +43,9 @@
 
 |  ID  | 昵称   | 联系方式   |  金额  |
 | --- | --- | --- | --- |
-|  1  |  沐子白  |  tiwlc@outlook.com  |  ￥10  |
+|  1  |  沐子白  |  yiwlc@qq.com  |  ￥30.0  |
 |  2   |  beststarry  |  1437617534@qq.com  |  ￥0.54  |
+|  3  | 匿名 | - | ￥1.0 |
+|  4  | 匿名 | - | ￥0.50 |
+|  5  | 匿名 | - | ￥20.0 |
+
