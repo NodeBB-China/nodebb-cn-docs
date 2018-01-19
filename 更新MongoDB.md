@@ -38,7 +38,7 @@
 > db.adminCommand( { setFeatureCompatibilityVersion: "3.4" } )
 ```
 ### 更新 Mongodb 程序
-将 Mongodb Repos 的地址中的 3.4 更换为 3.6，执行：
+将 Mongodb Repos 的地址中的 3.4 更换为 3.6，然后执行：
 ```
 $ sudo apt update && sudo apt upgrade #Debian/Ubuntu
 $ sudo yum update #REHL/CentOS
