@@ -24,6 +24,16 @@ systemctl enable mongod
 systemctl enable redis
 ```
 
+## pm2
+PM2 是一个带有负载均衡功能的 Node 应用的进程管理器。
+当你要把你的独立代码利用全部的服务器上的所有 CPU，并保证进程永远都活着，0 秒的重载， PM2 是十分完美的。
+
+>[info] 使用 pm2 时，我们无需再为 NodeBB 配置端口组
+
+```
+$ sudo pm2 start /path/to/nodebb/app.js --name NodeBB
+```
+
 ## systemd
 >[info] 记得把 `/path/to/nodebb` 和 `myuser` 替换成自己的 路径 和 用户名 哦！
 > ***我们能通过 systemd 使 NodeBB 开机自启***
@@ -120,4 +130,4 @@ $ grunt
 >[info] 编写: NodeBB Development Team
 维护: a632079
 审核: PA Team
-最后更新: 2017.08.17
+最后更新: 2018.01.20
