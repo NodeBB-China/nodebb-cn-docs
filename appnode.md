@@ -239,4 +239,63 @@ $ ./nodebb install
 5. 点击创建目录
 6. 点击 创建运行环境，然后点击开始部署。
 ![](images/screenshot_1516897714303.png)
-. 
+7. 在此步启动 nginx ，并开启自启和守护，然后单击 重载服务。
+
+
+----------------------------------------
+![](images/screenshot_1516898827378.png)
+1. 进入网站管理，选择创建网站。
+![](images/screenshot_1516898784506.png)
+![](images/screenshot_1516899031354.png)
+![](images/screenshot_1516899042443.png)
+2. 输入域名，可选启用 https,下方的反代设置随便选，稍后我们会对其进行重写。
+![](images/screenshot_1516899097633.png)
+3. 点击 创建，然后开始部署，点击重载服务
+
+![](images/screenshot_1516899197195.png)
+
+>[info] 因为 AppNode 的 反代设置不符合 NodeBB 的需求，所以我们得编辑源文件
+> **以下操作需要在 命令终端 中进行**
+
+还记得我们创建环境时使用的目录名嘛？如果没有修改就是:`mystack`
+```
+$ cd /data/mystack/sites/填入你的域名/conf
+```
+使用`vim nginx.conf` 编辑 `nginx.conf`，然后使用下方块来替换 location 块：
+```
+location / {
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-NginX-Proxy true;
+
+        proxy_pass http://127.0.0.1:4567;
+        proxy_redirect off;
+
+        # Socket.IO Support
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+    }
+```
+完成后，看起来像这样：
+![](images/screenshot_1516899809259.png)
+然后，我们重启 Nginx 服务：
+```
+$ systemctl restart nginx
+```
+### 修改 NodeBB 的域名配置
+```
+$ cd /home/nodebb # 修改为你的 NodeBB 所在目录
+$ vim config.json
+```
+编辑配置，将 url 修改为你的域名（带协议），比如我的：
+![](images/screenshot_1516900004612.png)
+
+重启一下 NodeBB
+```
+$ pm2 restart nodebb
+```
+Enjoy!
+
