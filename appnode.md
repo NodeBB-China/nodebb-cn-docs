@@ -110,7 +110,7 @@ $ systemctl enable mongod
 $ systemctl start mongod
 ```
 #### 更新源并安装
-![](images/screenshot_1516891356057.png
+![](images/screenshot_1516891356057.png)
 
 ```
 $ yum update && yum install mongodb-org

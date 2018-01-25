@@ -7,7 +7,7 @@
 Node.js 是由 Chrome JavaScript V8 引擎衍生出的一种高性能，高并发，易扩展的框架。
 NodeBB也正是因为它，才具有了快捷，高效的特性。
 
-* 截止目前，NodeBB 要求 Node.js 的最低版本为 v4.x 
+* 截止目前，NodeBB 要求 Node.js 的最低版本为 v8.x 
 
 >[success] 目前，推荐使用 Ubuntu/Debian 包管理器 来快速安装nodejs。
 #### 1.1.1 使用 Ubuntu/Debian 包管理器来安装 （推荐）
