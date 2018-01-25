@@ -200,9 +200,7 @@ $ ./nodebb install
 ![](images/screenshot_1516895127523.png)
 
 ### 配置 Redis 作为 Session 存储器
-![](images/screenshot_1516896674870.png)
 
->[info] 此步需在 命令终端 下执行
 
 ![](images/screenshot_1516906737826.png)
 在 NodeBB 目录下，使用 文件管理 ：
