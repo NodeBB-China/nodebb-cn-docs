@@ -71,16 +71,16 @@ $ sudo nvm install --lts
 1. 创建文件并编辑它
 
 ```
-$ vim /etc/yum.repos.d/mongodb-org-3.4.repo
+$ vim /etc/yum.repos.d/mongodb-org-3.6.repo
 ```
 2. 把下面的内容复制进去
 ```
-[mongodb-org-3.4]
+[mongodb-org-3.6]
 name=MongoDB Repository
-baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.4/x86_64/
+baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.6/x86_64/
 gpgcheck=1
 enabled=1
-gpgkey=https://www.mongodb.org/static/pgp/server-3.4.asc
+gpgkey=https://www.mongodb.org/static/pgp/server-3.6.asc
 ```
 3. 更新文件，安装
 ```
