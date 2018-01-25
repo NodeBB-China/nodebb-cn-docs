@@ -299,3 +299,7 @@ $ pm2 restart nodebb
 ```
 Enjoy!
 
+>[info] 编写: a632079
+维护: a632079
+审核: PA Team
+最后更新: 2018.01.25
