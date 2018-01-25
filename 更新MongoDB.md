@@ -40,7 +40,7 @@
 ### 更新 Mongodb 程序
 将 Mongodb Repos 的地址中的 3.4 更换为 3.6，然后执行：
 ```
-$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5 # 安装 3.6 的密钥
+$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5 # 安装 3.6 的密钥 （Debian / Ubuntu Only）
 $ sudo apt update && sudo apt upgrade #Debian/Ubuntu
 $ sudo yum update #REHL/CentOS
 ```
