@@ -26,8 +26,8 @@ $ yum -y install git ImageMagick ImageMagick-devel
 >[info] `nvm`是一款优秀的Node.js版本管理软件，这里我们就使用它来安装 Node.js.
 1. 首先，我们现在服务器上安装 `NVM` 
 ```
-#截止2017.08.07,NVM最新版本为 v0.33.2
-$ sudo curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash 
+#截止2018.01.25,NVM最新版本为 v0.33.8
+$ sudo curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash 
 ```
 ***可以在 [Github](https://github.com/creationix/nvm/) 中获取 NVM 最新的安装指令*** 
 
@@ -52,13 +52,13 @@ $ command -v nvm
 
 ```
 # 让NVM使用淘宝源
-$ sudo export NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node
-$ sudo export NVM_IOJS_ORG_MIRROR=http://npm.taobao.org/mirrors/iojs
+$ export NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node
+$ export NVM_IOJS_ORG_MIRROR=http://npm.taobao.org/mirrors/iojs
 ```
 5. 好，我们使用下面的代码来安装LTS版本
 ```
 #安装Node.js LTS
-$ sudo nvm install --lts
+$ nvm install --lts
 ```  
 
 6. 等待执行完成，如果使用`node -v` ，`npm -v`都能正确输出版本号的话，说明nodejs已经成功安装。
@@ -292,4 +292,4 @@ $ forever list
 >[info] 编写: hao-lee
 维护: a632079
 审核: PA Team
-最后更新: 2017.12.3
+最后更新: 2018.01.25
