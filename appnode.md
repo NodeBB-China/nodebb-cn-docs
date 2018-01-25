@@ -204,7 +204,12 @@ $ ./nodebb install
 
 >[info] 此步需在 命令终端 下执行
 
-在 NodeBB 目录下，使用 `vim config.json`将以下文本添加在 `config.json` 的最后（在最后一个`}`之前）：
+![](images/screenshot_1516906737826.png)
+在 NodeBB 目录下，使用 文件管理 ：
+1. 点击文件管理
+2. 进入 NodeBB 目录
+3. 点击 config.json ，进入编辑模式，将以下文本添加在 `config.json` 的最后（在最后一个`}`之前）
+4. 保存
 ```
      ,
     "redis":{
@@ -247,59 +252,25 @@ $ ./nodebb install
 1. 进入网站管理，选择创建网站。
 ![](images/screenshot_1516898784506.png)
 ![](images/screenshot_1516899031354.png)
-![](images/screenshot_1516899042443.png)
-2. 输入域名，可选启用 https,下方的反代设置随便选，稍后我们会对其进行重写。
+![](images/screenshot_1516906058370.png)
+2. 输入域名，可选启用 https. 反代配置请参考图片
 ![](images/screenshot_1516899097633.png)
 3. 点击 创建，然后开始部署，点击重载服务
 
 ![](images/screenshot_1516899197195.png)
 
->[info] 因为 AppNode 的 反代设置不符合 NodeBB 的需求，所以我们得编辑源文件
-> **以下操作需要在 命令终端 中进行**
-
-还记得我们创建环境时使用的目录名嘛？如果没有修改就是:`mystack`
-```
-$ cd /data/mystack/sites/填入你的域名/conf
-```
-使用`vim nginx.conf` 编辑 `nginx.conf`，然后使用下方块来替换 location 块：
-```
-location / {
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-        proxy_set_header Host $http_host;
-        proxy_set_header X-NginX-Proxy true;
-
-        proxy_pass http://127.0.0.1:4567;
-        proxy_redirect off;
-
-        # Socket.IO Support
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection "upgrade";
-    }
-```
-完成后，看起来像这样：
-![](images/screenshot_1516899809259.png)
-然后，我们重启 Nginx 服务：
-```
-$ systemctl restart nginx
-```
 ### 修改 NodeBB 的域名配置
-```
-$ cd /home/nodebb # 修改为你的 NodeBB 所在目录
-$ vim config.json
-```
-编辑配置，将 url 修改为你的域名（带协议），比如我的：
+使用 AppNode 的文件管理，可以很方便得修改 NodeBB 配置。
+![](images/screenshot_1516906285457.png)
+1. 点击文件管理
+2. 找到 NodeBB 的目录
+3. 点击 config.json ，然后进入编辑模式。
+4. 将 url 修改 为你的域名（带协议）比如我的：
 ![](images/screenshot_1516900004612.png)
 
 重启一下 NodeBB
-```
-$ pm2 restart nodebb
-```
-![](images/screenshot_1516900319709.png)
-
-Enjoy!
+![](images/screenshot_1516906446602.png)
+Enjoy it!
 ![](images/screenshot_1516900364073.png)
 
 >[info] 编写: a632079
