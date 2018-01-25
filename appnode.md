@@ -297,7 +297,10 @@ $ vim config.json
 ```
 $ pm2 restart nodebb
 ```
+![](images/screenshot_1516900319709.png)
+
 Enjoy!
+![](images/screenshot_1516900364073.png)
 
 >[info] 编写: a632079
 维护: a632079
