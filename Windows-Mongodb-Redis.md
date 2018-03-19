@@ -102,7 +102,7 @@ mongo --version
 
 4. 在 Shell 中 输入：
 ```
-mongod --dbpath 'C:\Program Files\MongoDB\Server\3.4\data' --logpath 'C:\Program Files\MongoDB\Server\3.4\logs\mongodb.log' --install
+mongod --dbpath 'C:\Program Files\MongoDB\Server\3.6\data' --logpath 'C:\Program Files\MongoDB\Server\3.6\logs\mongodb.log' --install
 ```
 >[info] 因为路径中出现空格，所有我们给`dbpath`和`logpath`指定路径的时候需要加一个引号来避免字符串截断的问题。
 ![](images/9.png)
@@ -157,7 +157,7 @@ mongo
 1. 利用 Powershell 到一个你喜欢的位置，然后克隆nodebb库，如
 ```
 cd D:\
-git clone -b v1.7.x https://github.com/NodeBB/NodeBB.git nodebb
+git clone -b v1.8.x https://github.com/NodeBB/NodeBB.git nodebb
 ```
 >[info] 现在，你可以使用国内的镜像仓库(`https://gitee.com/NodeBB-CN/NodeBB.git`)来提高连接速度。
 ![](images/16.png)

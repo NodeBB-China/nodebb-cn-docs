@@ -132,7 +132,7 @@ $ service redis-server restart
 1. 从 Github 上克隆 NodeBB 的发布版本分支
 ```
 cd /home #把目录替换为你想安装到的地方
-git clone -b v1.7.x https://github.com/NodeBB/NodeBB nodebb
+git clone -b v1.8.x https://github.com/NodeBB/NodeBB nodebb
 ```
 >[info] 现在，你可以使用国内的镜像仓库(`https://gitee.com/NodeBB-CN/NodeBB.git`)来提高连接速度。
 

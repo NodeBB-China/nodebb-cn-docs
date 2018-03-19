@@ -119,13 +119,13 @@ $ service mongod start
 切换到	`/home`目录(可替换为你想要的位置)，克隆源代码：
 ```
 $ cd /home #切换到你想要的位置
-$ git clone -b v1.7.x https://github.com/NodeBB/NodeBB.git nodebb
+$ git clone -b v1.8.x https://github.com/NodeBB/NodeBB.git nodebb
 ```
 
 >[info] 现在，你可以使用国内的镜像仓库(`https://gitee.com/NodeBB-CN/NodeBB.git`)来提高连接速度。
 ---------------------------------
 
->[warning] 注意： `v1.7.x` 是最新的稳定版分支的名字，**不建议** 使用其他分支作为 **生产环境**！
+>[warning] 注意： `v1.8.x` 是最新的稳定版分支的名字，**不建议** 使用其他分支作为 **生产环境**！
 2. 安装 NodeBB 的运行依赖
 ```
 $ cd /home/nodebb # /home替换成你上面选取的位置

@@ -265,7 +265,7 @@ $ sudo apt-get install -y git build-essential
 找到一个你喜欢的位置，然后使用`git`指令获取程序。
 ```
 $ cd /home #修改为你喜欢的位置
-$ sudo git clone -b v1.7.x https://github.com/NodeBB/NodeBB.git nodebb #这将在 /home 下面 新建一个名叫nodebb的文件夹并且会把程序从Github克隆到里面
+$ sudo git clone -b v1.8.x https://github.com/NodeBB/NodeBB.git nodebb #这将在 /home 下面 新建一个名叫nodebb的文件夹并且会把程序从Github克隆到里面
 ```
 >[info] 现在，你可以使用国内的镜像仓库(`https://gitee.com/NodeBB-CN/NodeBB.git`)来提高连接速度。
 

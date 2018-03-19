@@ -15,7 +15,7 @@ $ redis-server
 ```
 克隆 NodeBB 仓库:
 ```
-$ git clone -b v1.7.x https://github.com/NodeBB/NodeBB.git
+$ git clone -b v1.8.x https://github.com/NodeBB/NodeBB.git
 ```
 >[info] 现在，你可以使用国内的镜像仓库(`https://gitee.com/NodeBB-CN/NodeBB.git`)来提高连接速度。
 

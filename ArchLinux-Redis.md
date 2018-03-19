@@ -14,7 +14,7 @@ $ git clone -b v1.7.x https://github.com/NodeBB/NodeBB.git nodebb
 >[info] 现在，你可以使用国内的镜像仓库(`https://gitee.com/NodeBB-CN/NodeBB.git`)来提高连接速度。
 ----------------------
 
->[success] **2017.11.26** 更换 `v1.6.x` 分支 为新稳定分支 `v1.7.x`
+>[success] **2017.11.26** 更换 `v1.8.x` 分支 为新稳定分支 `v1.7.x`
 
 进入 NodeBB 目录：
 ```
