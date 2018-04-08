@@ -11,4 +11,45 @@ $ ./nodebb build adminjs admincss tpl
 有关 build 指令的详细用法， 可以通过查看本文档 `安装 - 使用` 部分来充分了解。
 
 ## Grunt
-为了优化开发过程， NodeBB 团队 （可能还有一部分插件作者）会在开发工作时使用 `Grunt`。
+为了优化开发过程， NodeBB 团队 （可能还有一部分插件作者）会在开发工作时使用 `Grunt`。尽管您可能需要安装 `grunt-cli` ， 但 `grunt` 会随着 `npm install` 直接被作为 NodeBB 的依赖安装。
+安装完成后， 您可以简单得通过 `grunt` 来编译所有资源并启动 NodeBB， `Grunt` 还会监听资源变化， 编译变动的资源。这使得我们无需通过 ACP， 或者通过指令重启， 启动 NodeBB。
+
+## ES2015 , ES2016, ES2017
+我们更推荐使用 ES2015 或者更新的 JS 语法来书写 NodeBB 插件。 这是规避 JS 错误丢失的最有效手段。
+* 使用 `const` , `let` 而不是 `var`
+```javascript
+const a = 1;
+let b = 1;
+b = 2; 
+```
+* 使用 `Promise`, 尽量规避回调
+```javascript
+Promise.resolve([1, 2, 3])
+  .then(data => {
+    // 做一些处理
+  })
+  .catch(err => {
+    winston.err(err);
+  });
+```
+* 善于利用 `class`, `generator`, `Symbol`, `async function` 等新特性
+```
+const privateData = Symbol('a');
+class A {
+  construct() {
+    this[privateData] = 'private'
+  }
+}
+
+new A()[privateData] // is private
+new A()['a'] // is null 
+new A()[Symbol('a')] // is null
+
+async function b() {
+  return true;
+}
+b()
+  .then(d =>{
+    // d is true
+  })
+```
