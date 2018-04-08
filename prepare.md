@@ -36,7 +36,7 @@ Promise.resolve([1, 2, 3])
 ```
 const privateData = Symbol('a');
 class A {
-  construct() {
+  constructor() {
     this[privateData] = 'private'
   }
 }
