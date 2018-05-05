@@ -32,7 +32,7 @@ Promise.resolve([1, 2, 3])
     winston.err(err);
   });
 ```
-* 善于利用 `class`, `generator`, `Symbol`, `async function` 等新特性
+* 善于利用 `Class`, `Generator`, `Symbol`, `Async Function` 等新特性
 ```
 const privateData = Symbol('a');
 class A {
@@ -53,3 +53,8 @@ b()
     // d is true
   })
 ```
+
+## 使用 QuickStart 来快速开发
+NodeBB 官方的 QuickStart 地址为: https://github.com/NodeBB/nodebb-plugin-quickstart
+但本章节， 我们会使用我们自己编写的 QuickStart 作为讲解基础。
+地址: https://github.com/NodeBB-China/nodebb-plugin-quickstart
