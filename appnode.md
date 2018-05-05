@@ -180,7 +180,7 @@ $ mongo
 选择一个你喜欢的位置，例如: `/home`，然后我们执行：
 ```
 $ cd /home # 改变目录为 /home
-$ git clone -b v1.8.x https://gitee.com/NodeBB-CN/NodeBB.git nodebb
+$ git clone -b v1.9.x https://gitee.com/NodeBB-CN/NodeBB.git nodebb
 ```
 ### 配置 NodeBB
 ![](images/screenshot_1516894569199.png)

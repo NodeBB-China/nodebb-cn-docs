@@ -162,13 +162,13 @@ $ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359
 #（目前最新版本是3.6，安装其他版本可以将 3.6 替换为其他版本。这个方法可能向上兼容到 3.0。）
 
 #如果你是Ubuntu 12.04 LTS 执行下面的代码
-$ sudo echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
+$ sudo echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
 
 #如果你是Ubuntu 14.04 LTS ，请执行下面的代码
-$ sudo echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
+$ sudo echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
 
 #如果你是Ubuntu 16.04 LTS 请执行下面的代码
-$ sudo echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
+$ sudo echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
 
 ```
   更新apt源
@@ -189,7 +189,7 @@ $ mongod --version # 检测版本
    - Debian
   导入公钥
 ```
-$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
+$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
 ```
  新建一个.list文件
 
@@ -198,13 +198,13 @@ $ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF
 >[success] 17.07.17 新增: **阿里源** `http://mirrors.aliyun.com/mongodb/apt/{ubuntu或者debian}` 
 
 ```
-#（目前最新版本是3.4，安装其他版本可以将下面的3.4替换为其他版本。这个方法可能向上兼容到3.2。）
+#（目前最新版本是3.6，安装其他版本可以将下面的3.4替换为其他版本。这个方法可能向上兼容到3.0。）
 
 #如果你是 Debian 7 Wheezy，请使用执行下面的命令
-$ sudo echo "deb http://repo.mongodb.org/apt/debian wheezy/mongodb-org/3.4 main" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
+$ sudo echo "deb http://repo.mongodb.org/apt/debian wheezy/mongodb-org/3.6 main" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
 
 #如果你是Debian 8 Jessie ,请执行下面的命令
-$ sudo echo "deb http://repo.mongodb.org/apt/debian jessie/mongodb-org/3.4 main" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
+$ sudo echo "deb http://repo.mongodb.org/apt/debian jessie/mongodb-org/3.6 main" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
 ```
   更新apt源
 ```
@@ -265,15 +265,9 @@ $ sudo apt-get install -y git build-essential
 找到一个你喜欢的位置，然后使用`git`指令获取程序。
 ```
 $ cd /home #修改为你喜欢的位置
-$ sudo git clone -b v1.8.x https://github.com/NodeBB/NodeBB.git nodebb #这将在 /home 下面 新建一个名叫nodebb的文件夹并且会把程序从Github克隆到里面
+$ sudo git clone -b v1.9.x https://github.com/NodeBB/NodeBB.git nodebb #这将在 /home 下面 新建一个名叫nodebb的文件夹并且会把程序从Github克隆到里面
 ```
 >[info] 现在，你可以使用国内的镜像仓库(`https://gitee.com/NodeBB-CN/NodeBB.git`)来提高连接速度。
-
-------------
-
->[success] **2017.08.07** 更换 `v1.x.x` 分支 为新稳定分支 `v1.5.x`
-> **2017.09.23** 更换 `v1.5.x` 分支 为新稳定分支 `v1.6.x`
-> **2017.11.26** 更换 `v1.6.x`分支 为新稳定分支 `v1.7.x`
 
 然后，我们先把依赖安装完毕。  
 ```
@@ -462,4 +456,4 @@ $ sudo service nginx reload
 >[info] 编写: a632079
 维护: a632079
 审核: PA Team
-最后更新: 2018.01.20
+最后更新: 2018.05.05

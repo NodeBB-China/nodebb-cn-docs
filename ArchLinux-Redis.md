@@ -9,12 +9,9 @@ $ sudo pacman -S git nodejs-lts-carbon npm redis imagemagick icu yarn
 如果要使用MongoDB，LevelDB或其他数据库而不是Redis，请查看“配置数据库”部分。同时，请将上方的 redis 替换为 `mongodb`
 下一步，克隆这个仓库:
 ```shell
-$ git clone -b v1.7.x https://github.com/NodeBB/NodeBB.git nodebb
+$ git clone -b v1.9.x https://github.com/NodeBB/NodeBB.git nodebb
 ```
 >[info] 现在，你可以使用国内的镜像仓库(`https://gitee.com/NodeBB-CN/NodeBB.git`)来提高连接速度。
-----------------------
-
->[success] **2017.11.26** 更换 `v1.8.x` 分支 为新稳定分支 `v1.7.x`
 
 进入 NodeBB 目录：
 ```
@@ -34,4 +31,4 @@ NodeBB也可以用辅助程序启动，如`supervisor`和`forever`。 你可以�
 >[info] 编写: NodeBB Development Team
 维护: a632079
 审核: PA Team
-最后更新: 2018.01.20
+最后更新: 2018.05.05
