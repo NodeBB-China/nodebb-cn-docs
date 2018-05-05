@@ -1,3 +1,7 @@
+# 常用方法 & 变量
+[TOC]
+
+## 导言
 ![](images/screenshot_1523274418452.png)
 NodeBB 自身携带了一系列方法， 我们将其称为 `NodeBB 系统函数库`。 NodeBB 系统函数库包含数据库操作， 权限管理， 用户操作， 路由管理， socket.io操作等快捷的方法。 出于快速开发的考虑， NodeBB 团队开放了系统函数库给开发者们调用。作为开始开发的第一步， 建议初步了解 NodeBB 系统函数库的使用方法。
 函数库位置： https://github.com/NodeBB/NodeBB/tree/master/src
@@ -18,6 +22,9 @@ NodeBB 自身携带了一系列方法， 我们将其称为 `NodeBB 系统函数
   const nconf = module.parent.require('nconf')
   const winston = module.parent.require('winston')
   const path = module.parent.require('path')
+  
+  // 加载依赖
+  const pify = require('pify')
 ```
 >[info] 以上是相对常用的 NodeBB 函数库 以及 NodeBB依赖模块 的申明
 
@@ -30,17 +37,54 @@ NodeBB 自身携带了一系列方法， 我们将其称为 `NodeBB 系统函数
 在 `plugin.json` 中添加 hook :
 ```json
 {
-  "hooks": {
-    "hook": "filter:user.whitelistFields",
-    "method": "addUserWhitelistFields"
+  "hooks": [
+    {
+      "hook": "filter:user.whitelistFields",
+      "method": "addUserWhitelistFields"
+    }
+  ]
 }
 ```
 在 `core.js` 中添加: 
 ```javascript
-module.export = {
-   addUserWhitelistFields: (data, callback) => {
-     data.whitelist.push('field_name') // 添加白名单字段名
-     return setImmediate(callback, null, data) // 设定异步回调
-   }
+class Core {
+  // 在类中添加
+  async addUserWhitelistFields: (data) => {
+    data.whitelist.push('field_name') // 添加白名单字段名
+    return data
+  }
+}
+```
+#### 保存数据至用户表
+* 方法: `user.setUserField`, `user.setUserFields`
+* 参数:
+  * 前者: `uid`, `field`, `data`
+  * 后者: `uid`, `data` (对象)
+
+##### 使用例子
+```javascript
+async () => {
+  // 如果只是保存一些非重要信息(无需确保写安全)， 可以移除下方的 `await` 来提高速度
+  await pify(user.setUserField)(1, 'access_token', '**********')
+  await pify(user.setUserFields)(1, {
+    access_token: '******',
+    access_secret: '******'
+  })
+}
+```
+#### 获取用户表数据
+* 方法: `user.getUsersFields` , `user.getUserFields` , `user.getUserField`
+* 参数: `uids`, `fields`
+
+> **注:**  后两者其实是前者的语法糖。
+
+该方法能够便捷得获取某用户的特有信息。
+
+##### 使用例子
+```javascript
+async () => {
+  const username = await pify(user.getUserField)(1, 'username') // 返回 uid 为 1 的用户名, 返回类型就是数据类型
+  const data = await pify(user.getUserFields)(1, ['username', 'email']) // 返回 uid 为 1 的用户的用户名和邮箱， 返回类型是数组
+  const muti = await pify(user.getUsersFields)([1, 2], ['username', 'email']) // 返回 uid  1, 2 的用户名和邮箱， 返回类型是数组 (多元数组)
 }
 ```
