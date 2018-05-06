@@ -88,7 +88,20 @@ curl -o- -L https://yarnpkg.com/install.sh | bash
 ```
 $ sudo npm i yarn -g
 ```
->[info] 编写: Yarn Docs
+
+## 使 Yarn 成为 NodeBB 的默认包管理器
+在安装 NodeBB 完成后， 删除 `./node_modules` 来确保环境干净。
+对于切换的方法， 其实很简单。 我们只需要编辑 `config.json` ， 添加以下字段:
+```json
+{
+    "package_manager": "yarn"
+}
+```
+保存后， NodeBB 之后插件更新， 依赖更新都会通过 yarn 安装了。
+由于之前我们删除了 `./node_modules`, 所以这时候我们手动执行 `yarn` 安装依赖。
+等待指令执行完毕后， 我们即可通过 `./nodebb start` 启动 NodeBB。
+
+>[info] 编写: a632079 & Yarn Docs
 维护: PA Team
 审核: PA Team
-最后更新: 2018.01.20
+最后更新: 2018.05.06
