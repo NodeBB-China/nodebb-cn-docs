@@ -97,7 +97,7 @@ $ sudo npm i yarn -g
     "package_manager": "yarn"
 }
 ```
-保存后， NodeBB 之后插件更新， 依赖更新都会通过 yarn 安装了。
+保存之后， NodeBB 以后的插件更新， 依赖更新都会通过 yarn 安装了。
 由于之前我们删除了 `./node_modules`, 所以这时候我们手动执行 `yarn` 安装依赖。
 等待指令执行完毕后， 我们即可通过 `./nodebb start` 启动 NodeBB。
 
