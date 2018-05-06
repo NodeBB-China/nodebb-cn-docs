@@ -58,3 +58,8 @@ b()
 NodeBB 官方的 QuickStart 地址为: https://github.com/NodeBB/nodebb-plugin-quickstart
 但本章节， 我们会使用我们自己编写的 QuickStart 作为讲解基础。
 地址: https://github.com/NodeBB-China/nodebb-plugin-quickstart
+
+>[info] 编写: a632079
+维护: PA Team
+审核: PA Team
+最后更新: 2018.05.06
